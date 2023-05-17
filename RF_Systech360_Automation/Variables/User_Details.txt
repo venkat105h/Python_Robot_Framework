@@ -1,0 +1,25 @@
+CreateUser#Force_Password_User#TestForcePassword1day#Test@123#Test@123#Satya#Reddy#testsec1@test.com#Admin Group
+CreateUser#Disable_User#TestUserDisable#Test@123#Test@123#Satya#Reddy#testsec2@test.com#Admin Group
+CreateUser#Admin_User#TestAdmin#Test@123#Test@123#Satya#Reddy#testsec3@test.com#Admin Group
+CreateUser#Designer_User#TestDesignerSecurity#Test@123#Test@123#Satya#Reddy#testsec4@test.com#Designer Group
+CreateUser#BO_User#TestBusinessOwner#Test@123#Test@123#Satya#Reddy#testsec5@test.com#Admin Group
+CreateUser#Operator_User#TestOperatorSecurity#Test@123#Test@123#Satya#Reddy#testsec6@test.com#Operator Group
+CreateUser#Unique_User#TestSecurityUnique#Test@123#Test@123#Satya#Reddy#testsec7@test.com#Admin Group
+CreateUser#Incorrect_User#TestIncorrectAnswers#Test@123#Test@123#Satya#Reddy#testsec8@test.com#Admin Group
+CreateUser#Req_Ques_User3#TestSecurity3to12#Test@123#Test@123#Satya#Reddy#testsec9@test.com#Admin Group
+CreateUser#Req_Ques_User12#TestSecurity12to3#Test@123#Test@123#Satya#Reddy#testsec10@test.com#Admin Group
+CreateUser#Case_User#TestCaseSensitiveAnswers#Test@123#Test@123#Satya#Reddy#testsec11@test.com#Admin Group
+CreateUser#Max_User#Test40characters#Test@123#Test@123#Satya#Reddy#testsec12@test.com#Admin Group
+
+
+
+
+InvalidSDPDetails#TestSdp123#1#abcd
+InvalidSDPDetails#TestSdp123#1#123.4
+InvalidSDPDetails#TestSdp123#1#123,345
+InvalidSDPDetails#Name#DataType#Value
+InvalidSDPDetails#Name#DataType#Value
+InvalidSDPDetails#Name#DataType#Value
+InvalidSDPDetails#Name#DataType#Value
+InvalidSDPDetails#Name#DataType#Value
+InvalidSDPDetails#Name#DataType#Value

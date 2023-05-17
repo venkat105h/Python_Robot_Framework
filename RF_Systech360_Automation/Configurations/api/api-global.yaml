@@ -1,0 +1,19 @@
+#client id
+client_id: m7hqc1m5shhkb1kkq4ocfrpc4
+API_BASE_URL: https://alertsubscription-systech-eng-dev.systechcloud.net
+#API Authentication Parameters
+aws_username: systechadmindev
+aws_password: CognitoUser123###
+
+
+# Alert Subscription Type APIs
+alert_get_rules_for_user_tenant: /alert-api/alert-subscription-service/api/v1/rules/{}/{}?page=0&size=40
+alert_get_rule_by_id: /alert-api/alert-subscription-service/api/v1/rule/{}
+alert_save_new_rule: /alert-api/alert-subscription-service/api/v1/rule
+alert_edit_rule: /alert-api/alert-subscription-service/api/v1/rule/{}
+alert_delete_rule: /alert-api/alert-subscription-service/api/v1/rule/{}
+alert_save_user_preferences: /alert-api/alert-subscription-service/api/v1/userpreference
+alert_get_user_preferences: /alert-api/alert-subscription-service/api/v1/userPreference/{}/{}
+
+
+

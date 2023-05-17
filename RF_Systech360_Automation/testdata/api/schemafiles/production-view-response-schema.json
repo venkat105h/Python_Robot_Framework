@@ -1,0 +1,115 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "resourcePath": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "count": {
+      "type": "integer"
+    },
+    "dataValue": {
+      "type": "object",
+      "properties": {
+        "siteServers": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "siteServerName": {
+                  "type": "string"
+                },
+                "alarmsActive": {
+                  "type": "boolean"
+                },
+                "percentInLot": {
+                  "type": "number"
+                },
+                "fractionInLot": {
+                  "type": "string"
+                },
+                "nodesInLot": {
+                  "type": "array",
+                  "items": {}
+                },
+                "inactiveNodes": {
+                  "type": "array",
+                  "items": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "componentPkid": {
+                          "type": "integer"
+                        },
+                        "nodeName": {
+                          "type": "string"
+                        },
+                        "alarmsActive": {
+                          "type": "boolean"
+                        }
+                      },
+                      "required": [
+                        "componentPkid",
+                        "nodeName",
+                        "alarmsActive"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "componentPkid": {
+                          "type": "integer"
+                        },
+                        "nodeName": {
+                          "type": "string"
+                        },
+                        "alarmsActive": {
+                          "type": "boolean"
+                        }
+                      },
+                      "required": [
+                        "componentPkid",
+                        "nodeName",
+                        "alarmsActive"
+                      ]
+                    }
+                  ]
+                },
+                "totalNodes": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "siteServerName",
+                "alarmsActive",
+                "percentInLot",
+                "fractionInLot",
+                "nodesInLot",
+                "inactiveNodes",
+                "totalNodes"
+              ]
+            }
+          ]
+        },
+        "pLineNodes": {
+          "type": "array",
+          "items": {}
+        }
+      },
+      "required": [
+        "siteServers",
+        "pLineNodes"
+      ]
+    }
+  },
+  "required": [
+    "resourcePath",
+    "status",
+    "count",
+    "dataValue"
+  ]
+}

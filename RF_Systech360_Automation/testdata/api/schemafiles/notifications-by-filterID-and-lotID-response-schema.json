@@ -1,0 +1,480 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "resourcePath": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "count": {
+      "type": "integer"
+    },
+    "dataValue": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "pkid": {
+              "type": "integer"
+            },
+            "uniObjectTypeId": {
+              "type": "integer"
+            },
+            "datakey": {
+              "type": "string"
+            },
+            "imageId": {
+              "type": "integer"
+            },
+            "image": {
+              "type": "object",
+              "properties": {
+                "pkid": {
+                  "type": "integer"
+                },
+                "imageURL": {
+                  "type": "null"
+                }
+              },
+              "required": [
+                "pkid",
+                "imageURL"
+              ]
+            },
+            "itemID": {
+              "type": "string"
+            },
+            "updateDate": {
+              "type": "string"
+            },
+            "objectName": {
+              "type": "string"
+            },
+            "originatorId": {
+              "type": "integer"
+            },
+            "objectVersion": {
+              "type": "integer"
+            },
+            "state": {
+              "type": "integer"
+            },
+            "parentId": {
+              "type": "integer"
+            },
+            "createDate": {
+              "type": "null"
+            },
+            "creatorName": {
+              "type": "null"
+            },
+            "descriptionEx": {
+              "type": "null"
+            },
+            "startDate": {
+              "type": "string"
+            },
+            "endDate": {
+              "type": "string"
+            },
+            "expireDate": {
+              "type": "string"
+            },
+            "product": {
+              "type": "string"
+            },
+            "productDescription": {
+              "type": "string"
+            },
+            "manufacturer": {
+              "type": "string"
+            },
+            "guardianName": {
+              "type": "string"
+            },
+            "lineName": {
+              "type": "string"
+            },
+            "siteServer": {
+              "type": "string"
+            },
+            "lotState": {
+              "type": "string"
+            },
+            "enabled": {
+              "type": "boolean"
+            },
+            "lotNumber": {
+              "type": "string"
+            },
+            "lotId": {
+              "type": "integer"
+            },
+            "status": {
+              "type": "string"
+            },
+            "canSend": {
+              "type": "boolean"
+            },
+            "updateStates": {
+              "type": "array",
+              "items": {}
+            },
+            "previousRule": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "pkid",
+            "uniObjectTypeId",
+            "datakey",
+            "imageId",
+            "image",
+            "itemID",
+            "updateDate",
+            "objectName",
+            "originatorId",
+            "objectVersion",
+            "state",
+            "parentId",
+            "createDate",
+            "creatorName",
+            "descriptionEx",
+            "startDate",
+            "endDate",
+            "expireDate",
+            "product",
+            "productDescription",
+            "manufacturer",
+            "guardianName",
+            "lineName",
+            "siteServer",
+            "lotState",
+            "enabled",
+            "lotNumber",
+            "lotId",
+            "status",
+            "canSend",
+            "updateStates",
+            "previousRule"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "pkid": {
+              "type": "integer"
+            },
+            "uniObjectTypeId": {
+              "type": "integer"
+            },
+            "datakey": {
+              "type": "string"
+            },
+            "imageId": {
+              "type": "integer"
+            },
+            "image": {
+              "type": "object",
+              "properties": {
+                "pkid": {
+                  "type": "integer"
+                },
+                "imageURL": {
+                  "type": "null"
+                }
+              },
+              "required": [
+                "pkid",
+                "imageURL"
+              ]
+            },
+            "itemID": {
+              "type": "string"
+            },
+            "updateDate": {
+              "type": "string"
+            },
+            "objectName": {
+              "type": "string"
+            },
+            "originatorId": {
+              "type": "integer"
+            },
+            "objectVersion": {
+              "type": "integer"
+            },
+            "state": {
+              "type": "integer"
+            },
+            "parentId": {
+              "type": "integer"
+            },
+            "createDate": {
+              "type": "null"
+            },
+            "creatorName": {
+              "type": "null"
+            },
+            "descriptionEx": {
+              "type": "null"
+            },
+            "startDate": {
+              "type": "string"
+            },
+            "endDate": {
+              "type": "string"
+            },
+            "expireDate": {
+              "type": "string"
+            },
+            "product": {
+              "type": "string"
+            },
+            "productDescription": {
+              "type": "string"
+            },
+            "manufacturer": {
+              "type": "string"
+            },
+            "guardianName": {
+              "type": "string"
+            },
+            "lineName": {
+              "type": "string"
+            },
+            "siteServer": {
+              "type": "string"
+            },
+            "lotState": {
+              "type": "string"
+            },
+            "enabled": {
+              "type": "boolean"
+            },
+            "lotNumber": {
+              "type": "string"
+            },
+            "lotId": {
+              "type": "integer"
+            },
+            "status": {
+              "type": "string"
+            },
+            "canSend": {
+              "type": "boolean"
+            },
+            "updateStates": {
+              "type": "array",
+              "items": {}
+            },
+            "previousRule": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "pkid",
+            "uniObjectTypeId",
+            "datakey",
+            "imageId",
+            "image",
+            "itemID",
+            "updateDate",
+            "objectName",
+            "originatorId",
+            "objectVersion",
+            "state",
+            "parentId",
+            "createDate",
+            "creatorName",
+            "descriptionEx",
+            "startDate",
+            "endDate",
+            "expireDate",
+            "product",
+            "productDescription",
+            "manufacturer",
+            "guardianName",
+            "lineName",
+            "siteServer",
+            "lotState",
+            "enabled",
+            "lotNumber",
+            "lotId",
+            "status",
+            "canSend",
+            "updateStates",
+            "previousRule"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "pkid": {
+              "type": "integer"
+            },
+            "uniObjectTypeId": {
+              "type": "integer"
+            },
+            "datakey": {
+              "type": "string"
+            },
+            "imageId": {
+              "type": "integer"
+            },
+            "image": {
+              "type": "object",
+              "properties": {
+                "pkid": {
+                  "type": "integer"
+                },
+                "imageURL": {
+                  "type": "null"
+                }
+              },
+              "required": [
+                "pkid",
+                "imageURL"
+              ]
+            },
+            "itemID": {
+              "type": "string"
+            },
+            "updateDate": {
+              "type": "string"
+            },
+            "objectName": {
+              "type": "string"
+            },
+            "originatorId": {
+              "type": "integer"
+            },
+            "objectVersion": {
+              "type": "integer"
+            },
+            "state": {
+              "type": "integer"
+            },
+            "parentId": {
+              "type": "integer"
+            },
+            "createDate": {
+              "type": "null"
+            },
+            "creatorName": {
+              "type": "null"
+            },
+            "descriptionEx": {
+              "type": "null"
+            },
+            "startDate": {
+              "type": "string"
+            },
+            "endDate": {
+              "type": "string"
+            },
+            "expireDate": {
+              "type": "string"
+            },
+            "product": {
+              "type": "string"
+            },
+            "productDescription": {
+              "type": "string"
+            },
+            "manufacturer": {
+              "type": "string"
+            },
+            "guardianName": {
+              "type": "string"
+            },
+            "lineName": {
+              "type": "string"
+            },
+            "siteServer": {
+              "type": "string"
+            },
+            "lotState": {
+              "type": "string"
+            },
+            "enabled": {
+              "type": "boolean"
+            },
+            "lotNumber": {
+              "type": "string"
+            },
+            "lotId": {
+              "type": "integer"
+            },
+            "status": {
+              "type": "string"
+            },
+            "canSend": {
+              "type": "boolean"
+            },
+            "updateStates": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "previousRule": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "pkid",
+            "uniObjectTypeId",
+            "datakey",
+            "imageId",
+            "image",
+            "itemID",
+            "updateDate",
+            "objectName",
+            "originatorId",
+            "objectVersion",
+            "state",
+            "parentId",
+            "createDate",
+            "creatorName",
+            "descriptionEx",
+            "startDate",
+            "endDate",
+            "expireDate",
+            "product",
+            "productDescription",
+            "manufacturer",
+            "guardianName",
+            "lineName",
+            "siteServer",
+            "lotState",
+            "enabled",
+            "lotNumber",
+            "lotId",
+            "status",
+            "canSend",
+            "updateStates",
+            "previousRule"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "resourcePath",
+    "status",
+    "count",
+    "dataValue"
+  ]
+}

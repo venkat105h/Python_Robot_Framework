@@ -1,0 +1,361 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "resourcePath": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "count": {
+      "type": "integer"
+    },
+    "baseImageURL": {
+      "type": "string"
+    },
+    "data": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "pkid": {
+              "type": "integer"
+            },
+            "name": {
+              "type": "string"
+            },
+            "uniObjectTypeId": {
+              "type": "integer"
+            },
+            "imageUrl": {
+              "type": "null"
+            },
+            "imageIcon": {
+              "type": "null"
+            },
+            "children": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "pkid": {
+                      "type": "integer"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "uniObjectTypeId": {
+                      "type": "integer"
+                    },
+                    "imageUrl": {
+                      "type": "null"
+                    },
+                    "imageIcon": {
+                      "type": "null"
+                    },
+                    "children": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "pkid": {
+                              "type": "integer"
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "uniObjectTypeId": {
+                              "type": "integer"
+                            },
+                            "imageUrl": {
+                              "type": "null"
+                            },
+                            "imageIcon": {
+                              "type": "null"
+                            },
+                            "children": {
+                              "type": "array",
+                              "items": [
+                                {
+                                  "type": "object",
+                                  "properties": {
+                                    "pkid": {
+                                      "type": "integer"
+                                    },
+                                    "name": {
+                                      "type": "string"
+                                    },
+                                    "uniObjectTypeId": {
+                                      "type": "integer"
+                                    },
+                                    "imageUrl": {
+                                      "type": "null"
+                                    },
+                                    "imageIcon": {
+                                      "type": "null"
+                                    },
+                                    "children": {
+                                      "type": "array",
+                                      "items": [
+                                        {
+                                          "type": "object",
+                                          "properties": {
+                                            "pkid": {
+                                              "type": "integer"
+                                            },
+                                            "name": {
+                                              "type": "string"
+                                            },
+                                            "uniObjectTypeId": {
+                                              "type": "integer"
+                                            },
+                                            "imageUrl": {
+                                              "type": "null"
+                                            },
+                                            "imageIcon": {
+                                              "type": "null"
+                                            },
+                                            "children": {
+                                              "type": "array",
+                                              "items": {}
+                                            }
+                                          },
+                                          "required": [
+                                            "pkid",
+                                            "name",
+                                            "uniObjectTypeId",
+                                            "imageUrl",
+                                            "imageIcon",
+                                            "children"
+                                          ]
+                                        },
+                                        {
+                                          "type": "object",
+                                          "properties": {
+                                            "pkid": {
+                                              "type": "integer"
+                                            },
+                                            "name": {
+                                              "type": "string"
+                                            },
+                                            "uniObjectTypeId": {
+                                              "type": "integer"
+                                            },
+                                            "imageUrl": {
+                                              "type": "null"
+                                            },
+                                            "imageIcon": {
+                                              "type": "null"
+                                            },
+                                            "children": {
+                                              "type": "array",
+                                              "items": [
+                                                {
+                                                  "type": "object",
+                                                  "properties": {
+                                                    "pkid": {
+                                                      "type": "integer"
+                                                    },
+                                                    "name": {
+                                                      "type": "string"
+                                                    },
+                                                    "uniObjectTypeId": {
+                                                      "type": "integer"
+                                                    },
+                                                    "imageUrl": {
+                                                      "type": "null"
+                                                    },
+                                                    "imageIcon": {
+                                                      "type": "null"
+                                                    },
+                                                    "children": {
+                                                      "type": "array",
+                                                      "items": [
+                                                        {
+                                                          "type": "object",
+                                                          "properties": {
+                                                            "pkid": {
+                                                              "type": "integer"
+                                                            },
+                                                            "name": {
+                                                              "type": "string"
+                                                            },
+                                                            "uniObjectTypeId": {
+                                                              "type": "integer"
+                                                            },
+                                                            "imageUrl": {
+                                                              "type": "null"
+                                                            },
+                                                            "imageIcon": {
+                                                              "type": "null"
+                                                            },
+                                                            "children": {
+                                                              "type": "array",
+                                                              "items": {}
+                                                            }
+                                                          },
+                                                          "required": [
+                                                            "pkid",
+                                                            "name",
+                                                            "uniObjectTypeId",
+                                                            "imageUrl",
+                                                            "imageIcon",
+                                                            "children"
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "required": [
+                                                    "pkid",
+                                                    "name",
+                                                    "uniObjectTypeId",
+                                                    "imageUrl",
+                                                    "imageIcon",
+                                                    "children"
+                                                  ]
+                                                },
+                                                {
+                                                  "type": "object",
+                                                  "properties": {
+                                                    "pkid": {
+                                                      "type": "integer"
+                                                    },
+                                                    "name": {
+                                                      "type": "string"
+                                                    },
+                                                    "uniObjectTypeId": {
+                                                      "type": "integer"
+                                                    },
+                                                    "imageUrl": {
+                                                      "type": "null"
+                                                    },
+                                                    "imageIcon": {
+                                                      "type": "null"
+                                                    },
+                                                    "children": {
+                                                      "type": "array",
+                                                      "items": [
+                                                        {
+                                                          "type": "object",
+                                                          "properties": {
+                                                            "pkid": {
+                                                              "type": "integer"
+                                                            },
+                                                            "name": {
+                                                              "type": "string"
+                                                            },
+                                                            "uniObjectTypeId": {
+                                                              "type": "integer"
+                                                            },
+                                                            "imageUrl": {
+                                                              "type": "null"
+                                                            },
+                                                            "imageIcon": {
+                                                              "type": "null"
+                                                            },
+                                                            "children": {
+                                                              "type": "array",
+                                                              "items": {}
+                                                            }
+                                                          },
+                                                          "required": [
+                                                            "pkid",
+                                                            "name",
+                                                            "uniObjectTypeId",
+                                                            "imageUrl",
+                                                            "imageIcon",
+                                                            "children"
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "required": [
+                                                    "pkid",
+                                                    "name",
+                                                    "uniObjectTypeId",
+                                                    "imageUrl",
+                                                    "imageIcon",
+                                                    "children"
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          },
+                                          "required": [
+                                            "pkid",
+                                            "name",
+                                            "uniObjectTypeId",
+                                            "imageUrl",
+                                            "imageIcon",
+                                            "children"
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "required": [
+                                    "pkid",
+                                    "name",
+                                    "uniObjectTypeId",
+                                    "imageUrl",
+                                    "imageIcon",
+                                    "children"
+                                  ]
+                                }
+                              ]
+                            }
+                          },
+                          "required": [
+                            "pkid",
+                            "name",
+                            "uniObjectTypeId",
+                            "imageUrl",
+                            "imageIcon",
+                            "children"
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "pkid",
+                    "name",
+                    "uniObjectTypeId",
+                    "imageUrl",
+                    "imageIcon",
+                    "children"
+                  ]
+                }
+              ]
+            }
+          },
+          "required": [
+            "pkid",
+            "name",
+            "uniObjectTypeId",
+            "imageUrl",
+            "imageIcon",
+            "children"
+          ]
+        }
+      ]
+    },
+    "entityType": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "resourcePath",
+    "status",
+    "count",
+    "baseImageURL",
+    "data",
+    "entityType"
+  ]
+}

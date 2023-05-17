@@ -1,0 +1,248 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "resourcePath": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "count": {
+      "type": "integer"
+    },
+    "baseImageURL": {
+      "type": "string"
+    },
+    "data": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "pkid": {
+              "type": "integer"
+            },
+            "uniObjectTypeId": {
+              "type": "integer"
+            },
+            "datakey": {
+              "type": "string"
+            },
+            "imageId": {
+              "type": "integer"
+            },
+            "image": {
+              "type": "object",
+              "properties": {
+                "pkid": {
+                  "type": "integer"
+                },
+                "imageURL": {
+                  "type": "null"
+                }
+              },
+              "required": [
+                "pkid",
+                "imageURL"
+              ]
+            },
+            "itemID": {
+              "type": "string"
+            },
+            "updateDate": {
+              "type": "string"
+            },
+            "objectName": {
+              "type": "string"
+            },
+            "originatorId": {
+              "type": "integer"
+            },
+            "objectVersion": {
+              "type": "integer"
+            },
+            "state": {
+              "type": "integer"
+            },
+            "parentId": {
+              "type": "integer"
+            },
+            "description": {
+              "type": "string"
+            },
+            "createDate": {
+              "type": "null"
+            },
+            "creatorName": {
+              "type": "null"
+            },
+            "descriptionEx": {
+              "type": "null"
+            },
+            "startDate": {
+              "type": "string"
+            },
+            "endDate": {
+              "type": "string"
+            },
+            "expireDate": {
+              "type": "string"
+            },
+            "product": {
+              "type": "string"
+            },
+            "productDescription": {
+              "type": "string"
+            },
+            "manufacturer": {
+              "type": "string"
+            },
+            "guardianName": {
+              "type": "string"
+            },
+            "lineName": {
+              "type": "string"
+            },
+            "siteServer": {
+              "type": "string"
+            },
+            "lotState": {
+              "type": "string"
+            },
+            "stats": {
+              "type": "array",
+              "items": {}
+            },
+            "workflowContent": {
+              "type": "object",
+              "properties": {
+                "pkid": {
+                  "type": "integer"
+                },
+                "objectId": {
+                  "type": "integer"
+                },
+                "jsonData": {
+                  "type": "null"
+                },
+                "datakey": {
+                  "type": "integer"
+                },
+                "memo": {
+                  "type": "string"
+                },
+                "userName": {
+                  "type": "null"
+                },
+                "manufacturerPkid": {
+                  "type": "integer"
+                },
+                "notificationPkids": {
+                  "type": "array",
+                  "items": [
+                    {
+                      "type": "integer"
+                    },
+                    {
+                      "type": "integer"
+                    },
+                    {
+                      "type": "integer"
+                    }
+                  ]
+                },
+                "notificationRulePkids": {
+                  "type": "array",
+                  "items": [
+                    {
+                      "type": "integer"
+                    },
+                    {
+                      "type": "integer"
+                    },
+                    {
+                      "type": "integer"
+                    }
+                  ]
+                },
+                "workflowStart": {
+                  "type": "null"
+                },
+                "workflowEnd": {
+                  "type": "null"
+                },
+                "workflowState": {
+                  "type": "string"
+                },
+                "ruleChangeCausedFailure": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "pkid",
+                "objectId",
+                "jsonData",
+                "datakey",
+                "memo",
+                "userName",
+                "manufacturerPkid",
+                "notificationPkids",
+                "notificationRulePkids",
+                "workflowStart",
+                "workflowEnd",
+                "workflowState",
+                "ruleChangeCausedFailure"
+              ]
+            },
+            "status": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "pkid",
+            "uniObjectTypeId",
+            "datakey",
+            "imageId",
+            "image",
+            "itemID",
+            "updateDate",
+            "objectName",
+            "originatorId",
+            "objectVersion",
+            "state",
+            "parentId",
+            "description",
+            "createDate",
+            "creatorName",
+            "descriptionEx",
+            "startDate",
+            "endDate",
+            "expireDate",
+            "product",
+            "productDescription",
+            "manufacturer",
+            "guardianName",
+            "lineName",
+            "siteServer",
+            "lotState",
+            "stats",
+            "workflowContent",
+            "status"
+          ]
+        }
+      ]
+    },
+    "entityType": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "resourcePath",
+    "status",
+    "count",
+    "baseImageURL",
+    "data",
+    "entityType"
+  ]
+}

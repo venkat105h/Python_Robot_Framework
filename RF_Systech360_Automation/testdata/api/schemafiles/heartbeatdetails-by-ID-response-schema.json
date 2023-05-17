@@ -1,0 +1,457 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "resourcePath": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "count": {
+      "type": "integer"
+    },
+    "baseImageURL": {
+      "type": "string"
+    },
+    "data": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "dataGroupId": {
+              "type": "integer"
+            },
+            "dataGroupName": {
+              "type": "string"
+            },
+            "keyValueList": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "name": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "array",
+                              "items": [
+                                {
+                                  "type": "object",
+                                  "properties": {
+                                    "name": {
+                                      "type": "string"
+                                    },
+                                    "value": {
+                                      "type": "string"
+                                    },
+                                    "message": {
+                                      "type": "null"
+                                    },
+                                    "order": {
+                                      "type": "integer"
+                                    }
+                                  },
+                                  "required": [
+                                    "name",
+                                    "value",
+                                    "message",
+                                    "order"
+                                  ]
+                                },
+                                {
+                                  "type": "object",
+                                  "properties": {
+                                    "name": {
+                                      "type": "string"
+                                    },
+                                    "value": {
+                                      "type": "string"
+                                    },
+                                    "message": {
+                                      "type": "null"
+                                    },
+                                    "order": {
+                                      "type": "integer"
+                                    }
+                                  },
+                                  "required": [
+                                    "name",
+                                    "value",
+                                    "message",
+                                    "order"
+                                  ]
+                                },
+                                {
+                                  "type": "object",
+                                  "properties": {
+                                    "name": {
+                                      "type": "string"
+                                    },
+                                    "value": {
+                                      "type": "string"
+                                    },
+                                    "message": {
+                                      "type": "null"
+                                    },
+                                    "order": {
+                                      "type": "integer"
+                                    }
+                                  },
+                                  "required": [
+                                    "name",
+                                    "value",
+                                    "message",
+                                    "order"
+                                  ]
+                                }
+                              ]
+                            },
+                            "message": {
+                              "type": "null"
+                            },
+                            "order": {
+                              "type": "integer"
+                            }
+                          },
+                          "required": [
+                            "name",
+                            "value",
+                            "message",
+                            "order"
+                          ]
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "name": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            },
+                            "message": {
+                              "type": "null"
+                            },
+                            "order": {
+                              "type": "integer"
+                            }
+                          },
+                          "required": [
+                            "name",
+                            "value",
+                            "message",
+                            "order"
+                          ]
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "name": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            },
+                            "message": {
+                              "type": "null"
+                            },
+                            "order": {
+                              "type": "integer"
+                            }
+                          },
+                          "required": [
+                            "name",
+                            "value",
+                            "message",
+                            "order"
+                          ]
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "name": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            },
+                            "message": {
+                              "type": "null"
+                            },
+                            "order": {
+                              "type": "integer"
+                            }
+                          },
+                          "required": [
+                            "name",
+                            "value",
+                            "message",
+                            "order"
+                          ]
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "name": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            },
+                            "message": {
+                              "type": "null"
+                            },
+                            "order": {
+                              "type": "integer"
+                            }
+                          },
+                          "required": [
+                            "name",
+                            "value",
+                            "message",
+                            "order"
+                          ]
+                        }
+                      ]
+                    },
+                    "message": {
+                      "type": "null"
+                    },
+                    "order": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "value",
+                    "message",
+                    "order"
+                  ]
+                }
+              ]
+            },
+            "errorMessages": {
+              "type": "array",
+              "items": {}
+            }
+          },
+          "required": [
+            "dataGroupId",
+            "dataGroupName",
+            "keyValueList",
+            "errorMessages"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dataGroupId": {
+              "type": "integer"
+            },
+            "dataGroupName": {
+              "type": "string"
+            },
+            "keyValueList": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "null"
+                    },
+                    "order": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "value",
+                    "message",
+                    "order"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "null"
+                    },
+                    "order": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "value",
+                    "message",
+                    "order"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "null"
+                    },
+                    "order": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "value",
+                    "message",
+                    "order"
+                  ]
+                }
+              ]
+            },
+            "errorMessages": {
+              "type": "array",
+              "items": {}
+            }
+          },
+          "required": [
+            "dataGroupId",
+            "dataGroupName",
+            "keyValueList",
+            "errorMessages"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dataGroupId": {
+              "type": "integer"
+            },
+            "dataGroupName": {
+              "type": "string"
+            },
+            "keyValueList": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "null"
+                    },
+                    "order": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "value",
+                    "message",
+                    "order"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "null"
+                    },
+                    "order": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "value",
+                    "message",
+                    "order"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "null"
+                    },
+                    "order": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "value",
+                    "message",
+                    "order"
+                  ]
+                }
+              ]
+            },
+            "errorMessages": {
+              "type": "array",
+              "items": {}
+            }
+          },
+          "required": [
+            "dataGroupId",
+            "dataGroupName",
+            "keyValueList",
+            "errorMessages"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "resourcePath",
+    "status",
+    "count",
+    "baseImageURL",
+    "data"
+  ]
+}

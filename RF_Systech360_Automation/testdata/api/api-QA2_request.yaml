@@ -1,0 +1,46 @@
+#request for rule id
+ApiRuleId: 196
+ApiRuleTenant: dd_systech_qa2
+ApiRuleUser:  ruleuser
+
+#Operator Request Data
+Operator_Api_Base_Url: https://dd-systech-qa2.systechcloud.net
+Filter_ID: 43
+Lot_ID: 27
+Invalid_Path_Parameter: ABC
+Blank_Path_Parameter:
+Authorization: Basic cnVsZXVzZXI6VGVzdEAxMDE=
+Notification_ID: 27
+entityTypeForTopology: 520
+IDForTopology: 6
+Component_ID: 6
+ID_For_HeartbeatDetails: 6
+Component_ID_For_GetNotes:  32
+OnlyFilter_ID_For_Notifications:  18
+Filter_ID_For_Notifications:  99
+Lot_ID_For_Notifications: 27
+p_limit:  15
+p_offset: 0
+p_order:  desc
+p_sort: updateDate
+p_limit1: 10
+p_offset1:  0
+p_order1: asc
+p_sort1:  name
+# Admin Login  APIs
+login_get_token_for_admin:  /Systech360/rest/admin/login/ruleuser
+# Operator Login  APIs
+operator_get_production_lots_by_filter_id:  /Systech360/rest/operator/productionLots/filter/
+operator_get_production_lots_details_by_lot_id:  /Systech360/rest/operator/productionLots/details/
+operator_get_notifications_getfiles_by_notification_id: /Systech360/rest/operator/notifications/getFiles/
+operator_entity_topology: /Systech360/rest/operator/entity/topology
+operator_messages_by_component_id: /Systech360/rest/operator/messages/
+operator_heartbeatdetails_by_id:  /Systech360/rest/operator/heartbeatdetails/
+operator_get_production_lot_by_lot_id: /Systech360/rest/operator/productionLot/
+operator_get_productionview: /Systech360/rest/operator/productionview
+operator_get_notifications_getnotes_by_notification_id: /Systech360/rest/operator/notifications/getNotes/
+operator_get_notifications_getnotes_by_component_id:  /Systech360/rest/operator/notifications/getNotes/
+operator_get_notifications_by_filter_id:  /Systech360/rest/operator/notifications/filter/
+operator_get_notifications_by_filter_id_and_lot_id: /Systech360/rest/operator/notifications/filter/xxx/lot/yyy
+operator_put_notifications_resend_by_notification_id: /Systech360/rest/operator/notifications/resend/
+operator_put_notifications_resendall: /Systech360/rest/operator/notifications/resendAll

@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "resourcePath": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "count": {
+      "type": "integer"
+    },
+    "data": {
+      "type": "array",
+      "items": {}
+    },
+    "entityType": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "resourcePath",
+    "status",
+    "count",
+    "data",
+    "entityType"
+  ]
+}

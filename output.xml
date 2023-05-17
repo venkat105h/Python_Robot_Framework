@@ -1,0 +1,1799 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.2 (Python 3.9.6 on win32)" generated="20211122 15:15:21.935" rpa="false" schemaversion="2">
+<suite id="s1" name="Administrator" source="C:\Manas Milind\Automation\My Fork\Systech360_Automation\RF_Systech360_Automation\ChineseTranslation\Administrator.robot">
+<kw name="Run Keywords" library="BuiltIn" type="SETUP">
+<arg>SEC/S360_Open Browser And Enter URL</arg>
+<arg>${URL}</arg>
+<arg>AND</arg>
+<arg>Select From List by index</arg>
+<arg>${SEC/S360_LANGUAGE_SELECT_BOX}</arg>
+<arg>${SEC/S360_LANGUAGE_SELECT_VALUE}</arg>
+<arg>AND</arg>
+<arg>SEC/S360_Enter Credentials and Login To Solution</arg>
+<arg>${Username}</arg>
+<arg>${Password}</arg>
+<arg>${AdminRole}</arg>
+<arg>AND</arg>
+<arg>set screenshot directory</arg>
+<arg>${SEC/S360_SCREENSHOT_LOCATION}</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="SEC/S360_Open Browser And Enter URL" library="Generic_Keywords">
+<arg>${URL}</arg>
+<doc>Launched browser, Navigates to specified URL</doc>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>10x</arg>
+<arg>2s</arg>
+<arg>Open Browser</arg>
+<arg>${Var_URL}</arg>
+<arg>${Browser_type}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${Var_URL}</arg>
+<arg>${Browser_type}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20211122 15:15:22.371" level="INFO">Opening browser 'Chrome' to base url 'https://eng-svt.systechcloud.net/Systech360/#/'.</msg>
+<status status="PASS" starttime="20211122 15:15:22.371" endtime="20211122 15:16:00.576"/>
+</kw>
+<status status="PASS" starttime="20211122 15:15:22.371" endtime="20211122 15:16:00.577"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20211122 15:16:00.577" endtime="20211122 15:16:00.693"/>
+</kw>
+<status status="PASS" starttime="20211122 15:15:22.371" endtime="20211122 15:16:00.693"/>
+</kw>
+<kw name="Select From List By Index" library="SeleniumLibrary">
+<arg>${SEC/S360_LANGUAGE_SELECT_BOX}</arg>
+<arg>${SEC/S360_LANGUAGE_SELECT_VALUE}</arg>
+<doc>Selects options from selection list ``locator`` by ``indexes``.</doc>
+<msg timestamp="20211122 15:16:00.694" level="INFO">Selecting options from selection list 'id=language-list' by index 1.</msg>
+<status status="PASS" starttime="20211122 15:16:00.693" endtime="20211122 15:16:00.793"/>
+</kw>
+<kw name="SEC/S360_Enter Credentials and Login To Solution" library="Generic_Keywords">
+<arg>${Username}</arg>
+<arg>${Password}</arg>
+<arg>${AdminRole}</arg>
+<doc>Enters the credentials and logs into the solution
+Where ${Var_Username} is Username to be entered
+${Var_Password} is password to be entered
+and ${RoleValue} is the index number of role (0-Admin, 1-Operator, 2-Designer)gi</doc>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${is_your_connection_not_private}</var>
+<arg>element should not be visible</arg>
+<arg>${ADVANCED_BTN}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Element Should Not Be Visible" library="SeleniumLibrary">
+<arg>${ADVANCED_BTN}</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<msg timestamp="20211122 15:16:00.848" level="INFO">Element 'id=details-button' did not exist.</msg>
+<status status="PASS" starttime="20211122 15:16:00.838" endtime="20211122 15:16:00.848"/>
+</kw>
+<msg timestamp="20211122 15:16:00.848" level="INFO">${is_your_connection_not_private} = True</msg>
+<status status="PASS" starttime="20211122 15:16:00.838" endtime="20211122 15:16:00.848"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${is_your_connection_not_private}'=='False'</arg>
+<arg>run keywords</arg>
+<arg>click element</arg>
+<arg>${ADVANCED_BTN}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20211122 15:16:00.849" endtime="20211122 15:16:00.849"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${SEC/S360_USERNAME_TXT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211122 15:16:00.849" endtime="20211122 15:16:00.872"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${is_account_field_present}</var>
+<arg>element should not be visible</arg>
+<arg>${SEC/S360_ACC_ID}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Element Should Not Be Visible" library="SeleniumLibrary">
+<arg>${SEC/S360_ACC_ID}</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<msg timestamp="20211122 15:16:00.881" level="INFO">Element 'id=accountId' did not exist.</msg>
+<status status="PASS" starttime="20211122 15:16:00.872" endtime="20211122 15:16:00.882"/>
+</kw>
+<msg timestamp="20211122 15:16:00.882" level="INFO">${is_account_field_present} = True</msg>
+<status status="PASS" starttime="20211122 15:16:00.872" endtime="20211122 15:16:00.882"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${is_account_field_present}'=='False'</arg>
+<arg>Input Text</arg>
+<arg>${SEC/S360_ACC_ID}</arg>
+<arg>eng_ga8100</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20211122 15:16:00.882" endtime="20211122 15:16:00.883"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>3x</arg>
+<arg>1s</arg>
+<arg>Input Text</arg>
+<arg>${SEC/S360_USERNAME_TXT}</arg>
+<arg>${Var_Username}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SEC/S360_USERNAME_TXT}</arg>
+<arg>${Var_Username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211122 15:16:00.884" level="INFO">Typing text 'AdminUser1' into text field 'id=userName'.</msg>
+<status status="PASS" starttime="20211122 15:16:00.883" endtime="20211122 15:16:00.981"/>
+</kw>
+<status status="PASS" starttime="20211122 15:16:00.883" endtime="20211122 15:16:00.981"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>3x</arg>
+<arg>1s</arg>
+<arg>Input Text</arg>
+<arg>${SEC/S360_PASSWORD_TXT}</arg>
+<arg>${Var_Password}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SEC/S360_PASSWORD_TXT}</arg>
+<arg>${Var_Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211122 15:16:00.982" level="INFO">Typing text 'Test@101' into text field 'id=password'.</msg>
+<status status="PASS" starttime="20211122 15:16:00.981" endtime="20211122 15:16:01.083"/>
+</kw>
+<status status="PASS" starttime="20211122 15:16:00.981" endtime="20211122 15:16:01.083"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>${SEC/S360_ROLE_LIST}</arg>
+<arg>${RoleValue}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20211122 15:16:01.083" level="INFO">Selecting options from selection list 'id=roleList' by value Administrator.</msg>
+<status status="PASS" starttime="20211122 15:16:01.083" endtime="20211122 15:16:01.132"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SEC/S360_LOGIN_BTN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211122 15:16:01.132" level="INFO">Clicking element 'id=loginBtn'.</msg>
+<status status="PASS" starttime="20211122 15:16:01.132" endtime="20211122 15:16:01.190"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>wait until element is not visible</arg>
+<arg>${SEC/S360_LOGIN_BTN}</arg>
+<arg>10s</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
+<arg>${SEC/S360_LOGIN_BTN}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" starttime="20211122 15:16:01.190" endtime="20211122 15:16:03.924"/>
+</kw>
+<status status="PASS" starttime="20211122 15:16:01.190" endtime="20211122 15:16:03.924"/>
+</kw>
+<kw name="SEC/S360_Accept End User License Agreement" library="Generic_Keywords">
+<doc>Accept end user license aggrement</doc>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${Status}</var>
+<arg>element should be visible</arg>
+<arg>${SEC/S360_ACCEPT_BTN}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${SEC/S360_ACCEPT_BTN}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211122 15:16:04.049" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211122 15:16:03.940" endtime="20211122 15:16:04.049"/>
+</kw>
+<msg timestamp="20211122 15:16:04.049" level="FAIL">Element with locator 'id=eusa-accept' not found.</msg>
+<status status="FAIL" starttime="20211122 15:16:03.924" endtime="20211122 15:16:04.049"/>
+</kw>
+<msg timestamp="20211122 15:16:04.049" level="INFO">${Status} = False</msg>
+<status status="PASS" starttime="20211122 15:16:03.924" endtime="20211122 15:16:04.049"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${Status}'=='${True}'</arg>
+<arg>Run Keywords</arg>
+<arg>Scroll Element Into View</arg>
+<arg>${SEC/S360_ACCEPT_BTN}</arg>
+<arg>AND</arg>
+<arg>click Element</arg>
+<arg>${SEC/S360_ACCEPT_BTN}</arg>
+<arg>AND</arg>
+<arg>wait until element is not visible</arg>
+<arg>${SEC/S360_ACCEPT_BTN}</arg>
+<arg>AND</arg>
+<arg>SEC/S360_Scroll Page To Location</arg>
+<arg>0</arg>
+<arg>0</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20211122 15:16:04.049" endtime="20211122 15:16:04.049"/>
+</kw>
+<status status="PASS" starttime="20211122 15:16:03.924" endtime="20211122 15:16:04.049"/>
+</kw>
+<status status="PASS" starttime="20211122 15:16:00.837" endtime="20211122 15:16:04.049"/>
+</kw>
+<kw name="Set Screenshot Directory" library="SeleniumLibrary">
+<arg>${SEC/S360_SCREENSHOT_LOCATION}</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" starttime="20211122 15:16:04.049" endtime="20211122 15:16:04.049"/>
+</kw>
+<status status="PASS" starttime="20211122 15:15:22.371" endtime="20211122 15:16:04.049"/>
+</kw>
+<test id="s1-t1" name="TC_01 Verify Landing Page">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Administrator/Landing Page/LandingPage.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211122 15:16:04.199" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Landing%20Page/LandingPage.png"&gt;&lt;img src="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Landing%20Page/LandingPage.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211122 15:16:04.049" endtime="20211122 15:16:04.199"/>
+</kw>
+<doc>Verifies translation of texts for the landing page</doc>
+<tag>TC 01</tag>
+<status status="PASS" starttime="20211122 15:16:04.049" endtime="20211122 15:16:04.199"/>
+</test>
+<test id="s1-t2" name="TC_02 Verify hover texts, menu and drop downs items">
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${sec/s360_hamburger_menu}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20211122 15:16:04.199" level="INFO">Simulating Mouse Over on element 'xpath=//*[contains(@class,'fa fa-bars')]'.</msg>
+<status status="PASS" starttime="20211122 15:16:04.199" endtime="20211122 15:16:04.475"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${SEC/S360_INFO_CENTER_HAM}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20211122 15:16:04.476" level="INFO">Simulating Mouse Over on element '//li[@id='hb_infoCenter']'.</msg>
+<status status="PASS" starttime="20211122 15:16:04.476" endtime="20211122 15:16:04.744"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Administrator/Landing Page/HamburgerMenuInfoCenter.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211122 15:16:04.834" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Landing%20Page/HamburgerMenuInfoCenter.png"&gt;&lt;img src="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Landing%20Page/HamburgerMenuInfoCenter.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211122 15:16:04.745" endtime="20211122 15:16:04.834"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${SEC/S360_INFO_CENTER_GENERAL_HAM}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20211122 15:16:04.834" level="INFO">Simulating Mouse Over on element '//li[@id='hb_general']'.</msg>
+<status status="PASS" starttime="20211122 15:16:04.834" endtime="20211122 15:16:05.128"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Administrator/Landing Page/HamburgerMenuInfoCenterGeneral.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211122 15:16:05.217" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Landing%20Page/HamburgerMenuInfoCenterGeneral.png"&gt;&lt;img src="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Landing%20Page/HamburgerMenuInfoCenterGeneral.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211122 15:16:05.128" endtime="20211122 15:16:05.217"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${SEC/S360_INFO_CENTER_PRODUCT_HAM}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20211122 15:16:05.217" level="INFO">Simulating Mouse Over on element '//li[@id='hb_product']'.</msg>
+<status status="PASS" starttime="20211122 15:16:05.217" endtime="20211122 15:16:05.506"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Administrator/Landing Page/HamburgerMenuInfoCenterProduct.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211122 15:16:05.594" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Landing%20Page/HamburgerMenuInfoCenterProduct.png"&gt;&lt;img src="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Landing%20Page/HamburgerMenuInfoCenterProduct.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211122 15:16:05.506" endtime="20211122 15:16:05.594"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${SEC/S360_INFO_CENTER_SYSTECH_HAM}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20211122 15:16:05.595" level="INFO">Simulating Mouse Over on element '//li[@id='hb_sysGAMP']'.</msg>
+<status status="PASS" starttime="20211122 15:16:05.594" endtime="20211122 15:16:05.875"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Administrator/Landing Page/HamburgerMenuInfoCenterSystechGAMP.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211122 15:16:05.980" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Landing%20Page/HamburgerMenuInfoCenterSystechGAMP.png"&gt;&lt;img src="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Landing%20Page/HamburgerMenuInfoCenterSystechGAMP.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211122 15:16:05.875" endtime="20211122 15:16:05.980"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${SEC/S360_SUPPORT_CENTER_HAM}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20211122 15:16:05.983" level="INFO">Simulating Mouse Over on element 'id=hb_supportCenter'.</msg>
+<status status="PASS" starttime="20211122 15:16:05.981" endtime="20211122 15:16:06.261"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Administrator/Landing Page/HamburgerMenuSupportCenter.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211122 15:16:06.367" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Landing%20Page/HamburgerMenuSupportCenter.png"&gt;&lt;img src="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Landing%20Page/HamburgerMenuSupportCenter.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211122 15:16:06.261" endtime="20211122 15:16:06.367"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${SEC/S360_TRAINING_CENTER_HAM}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20211122 15:16:06.367" level="INFO">Simulating Mouse Over on element '//li[@id='hb_trainingCenter']'.</msg>
+<status status="PASS" starttime="20211122 15:16:06.367" endtime="20211122 15:16:06.662"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Administrator/Landing Page/HamburgerMenuTrainingCenter.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211122 15:16:06.782" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Landing%20Page/HamburgerMenuTrainingCenter.png"&gt;&lt;img src="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Landing%20Page/HamburgerMenuTrainingCenter.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211122 15:16:06.662" endtime="20211122 15:16:06.782"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${SEC/S360_WELCOME_LINK}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20211122 15:16:06.782" level="INFO">Simulating Mouse Over on element 'id=navBtn_welcome'.</msg>
+<status status="PASS" starttime="20211122 15:16:06.782" endtime="20211122 15:16:07.063"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211122 15:16:08.064" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20211122 15:16:07.063" endtime="20211122 15:16:08.064"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Administrator/Landing Page/WelcomeTT.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211122 15:16:08.183" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Landing%20Page/WelcomeTT.png"&gt;&lt;img src="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Landing%20Page/WelcomeTT.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211122 15:16:08.064" endtime="20211122 15:16:08.183"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${SEC/S360_UNITRACE_HEADER}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20211122 15:16:08.183" level="INFO">Simulating Mouse Over on element '//a[@id='navBtnSolutions_1']'.</msg>
+<status status="PASS" starttime="20211122 15:16:08.183" endtime="20211122 15:16:08.458"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211122 15:16:09.468" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20211122 15:16:08.459" endtime="20211122 15:16:09.468"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Administrator/Landing Page/UniTraceTT.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211122 15:16:09.551" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Landing%20Page/UniTraceTT.png"&gt;&lt;img src="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Landing%20Page/UniTraceTT.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211122 15:16:09.468" endtime="20211122 15:16:09.551"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${SEC/S360_TOP_BANNER_SOL_DD}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20211122 15:16:09.551" level="INFO">Simulating Mouse Over on element 'id=navBtnSolutions_2'.</msg>
+<status status="PASS" starttime="20211122 15:16:09.551" endtime="20211122 15:16:09.832"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Administrator/Landing Page/UniSecureDropDown.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211122 15:16:09.921" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Landing%20Page/UniSecureDropDown.png"&gt;&lt;img src="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Landing%20Page/UniSecureDropDown.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211122 15:16:09.833" endtime="20211122 15:16:09.921"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${SEC/S360_ABOUT_HEADER}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20211122 15:16:09.921" level="INFO">Simulating Mouse Over on element '//a[@id='navBtn_about']'.</msg>
+<status status="PASS" starttime="20211122 15:16:09.921" endtime="20211122 15:16:10.215"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211122 15:16:11.219" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20211122 15:16:10.215" endtime="20211122 15:16:11.219"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Administrator/Landing Page/AboutTT.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211122 15:16:11.303" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Landing%20Page/AboutTT.png"&gt;&lt;img src="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Landing%20Page/AboutTT.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211122 15:16:11.219" endtime="20211122 15:16:11.303"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${SEC/S360_MAIN_PLAY_VIDEO_ICON}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20211122 15:16:11.303" level="INFO">Simulating Mouse Over on element 'id=video-play-iconTopnav'.</msg>
+<status status="PASS" starttime="20211122 15:16:11.303" endtime="20211122 15:16:11.587"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211122 15:16:12.604" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20211122 15:16:11.588" endtime="20211122 15:16:12.604"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Administrator/Landing Page/MainPlayVideoIconTT.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211122 15:16:12.686" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Landing%20Page/MainPlayVideoIconTT.png"&gt;&lt;img src="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Landing%20Page/MainPlayVideoIconTT.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211122 15:16:12.604" endtime="20211122 15:16:12.686"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${SEC/S360_CHANGE_ROLE_DD}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20211122 15:16:12.686" level="INFO">Simulating Mouse Over on element '//*[@id="dropdownMenu1"]'.</msg>
+<status status="PASS" starttime="20211122 15:16:12.686" endtime="20211122 15:16:12.973"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211122 15:16:13.975" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20211122 15:16:12.973" endtime="20211122 15:16:13.975"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Administrator/Landing Page/ChangeRoleDropDownTT.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211122 15:16:14.052" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Landing%20Page/ChangeRoleDropDownTT.png"&gt;&lt;img src="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Landing%20Page/ChangeRoleDropDownTT.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211122 15:16:13.975" endtime="20211122 15:16:14.052"/>
+</kw>
+<doc>Verifies translation of all the hover texts, menu items and drop downs</doc>
+<tag>TC 02</tag>
+<status status="PASS" starttime="20211122 15:16:04.199" endtime="20211122 15:16:14.052"/>
+</test>
+<test id="s1-t3" name="TC_03 Verify Users/Groups page">
+<kw name="SEC/S360 Navigate to Card" library="Generic_Keywords">
+<arg>${S360_USERGROUPS_CARD}</arg>
+<arg>${SEC/S360_ADD_NEW_USER_BTN}</arg>
+<doc>Navigate to respective card</doc>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<var>${Status}</var>
+<arg>${CardLocator}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20211122 15:16:14.083" level="INFO">Element 'id=preferenceCardName_0' is displayed.</msg>
+<msg timestamp="20211122 15:16:14.083" level="INFO">${Status} = None</msg>
+<status status="PASS" starttime="20211122 15:16:14.052" endtime="20211122 15:16:14.083"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${Status}=='False'</arg>
+<arg>SEC/S360 Navigate To Landing Page</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20211122 15:16:14.083" endtime="20211122 15:16:14.083"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${CardLocator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211122 15:16:14.083" endtime="20211122 15:16:14.099"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>3x</arg>
+<arg>2s</arg>
+<arg>Click Element</arg>
+<arg>${CardLocator}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CardLocator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211122 15:16:14.099" level="INFO">Clicking element 'id=preferenceCardName_0'.</msg>
+<status status="PASS" starttime="20211122 15:16:14.099" endtime="20211122 15:16:14.231"/>
+</kw>
+<status status="PASS" starttime="20211122 15:16:14.099" endtime="20211122 15:16:14.231"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211122 15:16:16.233" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20211122 15:16:14.232" endtime="20211122 15:16:16.233"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${ValidationLocator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211122 15:16:16.233" endtime="20211122 15:16:16.251"/>
+</kw>
+<status status="PASS" starttime="20211122 15:16:14.052" endtime="20211122 15:16:16.251"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Administrator/Users Groups/UsersGroupsUpperHalf.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211122 15:16:16.413" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Users%20Groups/UsersGroupsUpperHalf.png"&gt;&lt;img src="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Users%20Groups/UsersGroupsUpperHalf.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211122 15:16:16.254" endtime="20211122 15:16:16.413"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${SEC/S360_MSGCNTR_ICON}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20211122 15:16:16.414" level="INFO">Simulating Mouse Over on element 'id=toggle-filter-icon'.</msg>
+<status status="PASS" starttime="20211122 15:16:16.414" endtime="20211122 15:16:16.689"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211122 15:16:17.691" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20211122 15:16:16.690" endtime="20211122 15:16:17.691"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Administrator/Users Groups/MessageCenterTT.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211122 15:16:17.848" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Users%20Groups/MessageCenterTT.png"&gt;&lt;img src="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Users%20Groups/MessageCenterTT.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211122 15:16:17.692" endtime="20211122 15:16:17.848"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${SEC/S360_SHOW_HIDE_INTRO_ICON}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20211122 15:16:17.849" level="INFO">Simulating Mouse Over on element '//i[@class="fa fa-info fa-lg"]'.</msg>
+<status status="PASS" starttime="20211122 15:16:17.848" endtime="20211122 15:16:18.123"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211122 15:16:19.124" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20211122 15:16:18.124" endtime="20211122 15:16:19.124"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Administrator/Users Groups/ShowHideIntroTT.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211122 15:16:19.235" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Users%20Groups/ShowHideIntroTT.png"&gt;&lt;img src="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Users%20Groups/ShowHideIntroTT.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211122 15:16:19.125" endtime="20211122 15:16:19.235"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SEC/S360_FILTER_USER_DD}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211122 15:16:19.235" level="INFO">Clicking element 'id=listFilterCriteria'.</msg>
+<status status="PASS" starttime="20211122 15:16:19.235" endtime="20211122 15:16:19.366"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Administrator/Users Groups/FilterDropDownList.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211122 15:16:19.547" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Users%20Groups/FilterDropDownList.png"&gt;&lt;img src="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Users%20Groups/FilterDropDownList.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211122 15:16:19.367" endtime="20211122 15:16:19.547"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SEC/S360_FILTER_USER_DD}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211122 15:16:19.549" level="INFO">Clicking element 'id=listFilterCriteria'.</msg>
+<status status="PASS" starttime="20211122 15:16:19.548" endtime="20211122 15:16:19.621"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${SEC/S360_ASCENDING_BTN}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20211122 15:16:19.622" level="INFO">Simulating Mouse Over on element 'id=AscdBtn'.</msg>
+<status status="PASS" starttime="20211122 15:16:19.622" endtime="20211122 15:16:19.918"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211122 15:16:20.920" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20211122 15:16:19.918" endtime="20211122 15:16:20.920"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Administrator/Users Groups/AscendingButtonTT.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211122 15:16:21.004" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Users%20Groups/AscendingButtonTT.png"&gt;&lt;img src="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Users%20Groups/AscendingButtonTT.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211122 15:16:20.920" endtime="20211122 15:16:21.004"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${SEC/S360_DESCENDING_BTN}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20211122 15:16:21.004" level="INFO">Simulating Mouse Over on element 'id=DscdBtn'.</msg>
+<status status="PASS" starttime="20211122 15:16:21.004" endtime="20211122 15:16:21.290"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211122 15:16:22.291" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20211122 15:16:21.290" endtime="20211122 15:16:22.291"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Administrator/Users Groups/DescendingButtonTT.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211122 15:16:22.371" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Users%20Groups/DescendingButtonTT.png"&gt;&lt;img src="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Users%20Groups/DescendingButtonTT.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211122 15:16:22.291" endtime="20211122 15:16:22.371"/>
+</kw>
+<kw name="SEC/S360_Scroll Page To Location" library="Generic_Keywords">
+<arg>0</arg>
+<arg>700</arg>
+<doc>Scrolls to the location mentioned</doc>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(${x_location},${y_location})</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20211122 15:16:22.371" level="INFO">Executing JavaScript:
+window.scrollTo(0,700)
+Without any arguments.</msg>
+<status status="PASS" starttime="20211122 15:16:22.371" endtime="20211122 15:16:22.431"/>
+</kw>
+<status status="PASS" starttime="20211122 15:16:22.371" endtime="20211122 15:16:22.431"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Administrator/Users Groups/UsersGroupsBottomHalf.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211122 15:16:22.560" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Users%20Groups/UsersGroupsBottomHalf.png"&gt;&lt;img src="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Users%20Groups/UsersGroupsBottomHalf.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211122 15:16:22.432" endtime="20211122 15:16:22.560"/>
+</kw>
+<kw name="SEC/S360_Scroll Page To Location" library="Generic_Keywords">
+<arg>0</arg>
+<arg>0</arg>
+<doc>Scrolls to the location mentioned</doc>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(${x_location},${y_location})</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20211122 15:16:22.562" level="INFO">Executing JavaScript:
+window.scrollTo(0,0)
+Without any arguments.</msg>
+<status status="PASS" starttime="20211122 15:16:22.562" endtime="20211122 15:16:22.567"/>
+</kw>
+<status status="PASS" starttime="20211122 15:16:22.561" endtime="20211122 15:16:22.567"/>
+</kw>
+<doc>Verifies translation of texts for Users/Groups page</doc>
+<tag>TC 03</tag>
+<status status="PASS" starttime="20211122 15:16:14.052" endtime="20211122 15:16:22.568"/>
+</test>
+<test id="s1-t4" name="TC_04 Verify Add New Group under Users/Groups page">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SEC/S360_ADD_NEW_GROUP_BTN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211122 15:16:22.572" level="INFO">Clicking element 'xpath=//i[@id='newGroup']'.</msg>
+<status status="PASS" starttime="20211122 15:16:22.571" endtime="20211122 15:16:22.758"/>
+</kw>
+<kw name="SEC/S360_Scroll Page To Location" library="Generic_Keywords">
+<arg>0</arg>
+<arg>500</arg>
+<doc>Scrolls to the location mentioned</doc>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(${x_location},${y_location})</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20211122 15:16:22.760" level="INFO">Executing JavaScript:
+window.scrollTo(0,500)
+Without any arguments.</msg>
+<status status="PASS" starttime="20211122 15:16:22.759" endtime="20211122 15:16:22.766"/>
+</kw>
+<status status="PASS" starttime="20211122 15:16:22.758" endtime="20211122 15:16:22.766"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Administrator/Users Groups/Add New Group/NewGroupfields.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211122 15:16:22.934" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Users%20Groups/Add%20New%20Group/NewGroupfields.png"&gt;&lt;img src="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Users%20Groups/Add%20New%20Group/NewGroupfields.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211122 15:16:22.766" endtime="20211122 15:16:22.934"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${SEC/S360_GROUP_NAME_TXT_BOX}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20211122 15:16:22.936" level="INFO">Simulating Mouse Over on element 'id=txtBoxNewGroupName'.</msg>
+<status status="PASS" starttime="20211122 15:16:22.935" endtime="20211122 15:16:23.211"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211122 15:16:24.211" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20211122 15:16:23.211" endtime="20211122 15:16:24.211"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Administrator/Users Groups/Add New Group/GroupNamefieldTT.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211122 15:16:24.288" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Users%20Groups/Add%20New%20Group/GroupNamefieldTT.png"&gt;&lt;img src="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Users%20Groups/Add%20New%20Group/GroupNamefieldTT.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211122 15:16:24.211" endtime="20211122 15:16:24.288"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${SEC/S360_GROUP_DESC_TXT_BOX}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20211122 15:16:24.288" level="INFO">Simulating Mouse Over on element 'id=txtBoxNewGroupDesc'.</msg>
+<status status="PASS" starttime="20211122 15:16:24.288" endtime="20211122 15:16:24.565"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211122 15:16:25.567" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20211122 15:16:24.565" endtime="20211122 15:16:25.567"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Administrator/Users Groups/Add New Group/GroupDescfieldTT.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211122 15:16:25.671" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Users%20Groups/Add%20New%20Group/GroupDescfieldTT.png"&gt;&lt;img src="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Users%20Groups/Add%20New%20Group/GroupDescfieldTT.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211122 15:16:25.567" endtime="20211122 15:16:25.671"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${SEC/S360_SAVE_GROUP_BTN}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20211122 15:16:25.673" level="INFO">Simulating Mouse Over on element 'id=btnCreateNewGrp'.</msg>
+<status status="PASS" starttime="20211122 15:16:25.672" endtime="20211122 15:16:25.946"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211122 15:16:26.948" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20211122 15:16:25.946" endtime="20211122 15:16:26.948"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Administrator/Users Groups/Add New Group/CreateGroupTT.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211122 15:16:27.071" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Users%20Groups/Add%20New%20Group/CreateGroupTT.png"&gt;&lt;img src="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Users%20Groups/Add%20New%20Group/CreateGroupTT.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211122 15:16:26.948" endtime="20211122 15:16:27.071"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${SEC/S360_CANCEL_GROUP_BTN}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20211122 15:16:27.071" level="INFO">Simulating Mouse Over on element '//span[@id='btnCancelNewGrp']'.</msg>
+<status status="PASS" starttime="20211122 15:16:27.071" endtime="20211122 15:16:27.348"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211122 15:16:28.368" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20211122 15:16:27.348" endtime="20211122 15:16:28.368"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Administrator/Users Groups/Add New Group/CancelGroupTT.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211122 15:16:28.455" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Users%20Groups/Add%20New%20Group/CancelGroupTT.png"&gt;&lt;img src="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Users%20Groups/Add%20New%20Group/CancelGroupTT.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211122 15:16:28.368" endtime="20211122 15:16:28.455"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${SEC/S360_OPERATOR_ROLE}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20211122 15:16:28.455" level="INFO">Simulating Mouse Over on element '(//*[contains(@id,"role_")]//img[contains(@src,"_icon_inspector")])[1]'.</msg>
+<status status="PASS" starttime="20211122 15:16:28.455" endtime="20211122 15:16:28.743"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211122 15:16:29.746" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20211122 15:16:28.743" endtime="20211122 15:16:29.746"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Administrator/Users Groups/Add New Group/OperatorTT.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211122 15:16:29.822" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Users%20Groups/Add%20New%20Group/OperatorTT.png"&gt;&lt;img src="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Users%20Groups/Add%20New%20Group/OperatorTT.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211122 15:16:29.746" endtime="20211122 15:16:29.822"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${SEC/S360_DESIGNER_ROLE}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20211122 15:16:29.822" level="INFO">Simulating Mouse Over on element '(//*[contains(@id,"role_")]//img[contains(@src,"_icon_designer")])[1]'.</msg>
+<status status="PASS" starttime="20211122 15:16:29.822" endtime="20211122 15:16:30.110"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211122 15:16:31.112" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20211122 15:16:30.110" endtime="20211122 15:16:31.112"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Administrator/Users Groups/Add New Group/DesignerTT.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211122 15:16:31.183" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Users%20Groups/Add%20New%20Group/DesignerTT.png"&gt;&lt;img src="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Users%20Groups/Add%20New%20Group/DesignerTT.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211122 15:16:31.112" endtime="20211122 15:16:31.183"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${SEC/S360_ADMIN_ROLE}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20211122 15:16:31.184" level="INFO">Simulating Mouse Over on element '(//*[contains(@id,"role_")]//img[contains(@src,"_icon_administrator")])[1]'.</msg>
+<status status="PASS" starttime="20211122 15:16:31.184" endtime="20211122 15:16:31.466"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211122 15:16:32.469" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20211122 15:16:31.466" endtime="20211122 15:16:32.469"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Administrator/Users Groups/Add New Group/AdministratorTT.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211122 15:16:32.551" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Users%20Groups/Add%20New%20Group/AdministratorTT.png"&gt;&lt;img src="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Users%20Groups/Add%20New%20Group/AdministratorTT.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211122 15:16:32.469" endtime="20211122 15:16:32.551"/>
+</kw>
+<kw name="SEC/S360_Scroll Page To Location" library="Generic_Keywords">
+<arg>0</arg>
+<arg>0</arg>
+<doc>Scrolls to the location mentioned</doc>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(${x_location},${y_location})</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20211122 15:16:32.553" level="INFO">Executing JavaScript:
+window.scrollTo(0,0)
+Without any arguments.</msg>
+<status status="PASS" starttime="20211122 15:16:32.552" endtime="20211122 15:16:32.581"/>
+</kw>
+<status status="PASS" starttime="20211122 15:16:32.552" endtime="20211122 15:16:32.581"/>
+</kw>
+<doc>Verifies translation for Add New Group functionality</doc>
+<tag>TC 04</tag>
+<status status="PASS" starttime="20211122 15:16:22.569" endtime="20211122 15:16:32.582"/>
+</test>
+<test id="s1-t5" name="TC_05 Verify Add New User window under Users/Groups page">
+<kw name="Split String" library="String">
+<var>@{Users_List}</var>
+<arg>${Delete_User_List_zh}</arg>
+<arg>,</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<msg timestamp="20211122 15:16:32.584" level="INFO">@{Users_List} = [ TestAdminUser1 ]</msg>
+<status status="PASS" starttime="20211122 15:16:32.584" endtime="20211122 15:16:32.584"/>
+</kw>
+<kw name="SEC/S360_Delete Users" library="Admin_Keywords">
+<arg>@{Users_List}</arg>
+<doc>Deletes the user</doc>
+<kw name="Get Length" library="BuiltIn">
+<var>${Total_Users}</var>
+<arg>${NameOfUser}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20211122 15:16:32.585" level="INFO">Length is 1</msg>
+<msg timestamp="20211122 15:16:32.585" level="INFO">${Total_Users} = 1</msg>
+<status status="PASS" starttime="20211122 15:16:32.585" endtime="20211122 15:16:32.585"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${Index}</var>
+<value>0</value>
+<value>${Total_Users}</value>
+<iter>
+<var name="${Index}">0</var>
+<kw name="SEC/S360_Seach An User" library="Admin_Keywords">
+<var>${Index_Number}</var>
+<arg>${NameOfUser}[${Index}]</arg>
+<doc>Search for specified user</doc>
+<kw name="SEC/S360_Scroll Page To Location" library="Generic_Keywords">
+<arg>0</arg>
+<arg>0</arg>
+<doc>Scrolls to the location mentioned</doc>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(${x_location},${y_location})</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20211122 15:16:32.587" level="INFO">Executing JavaScript:
+window.scrollTo(0,0)
+Without any arguments.</msg>
+<status status="PASS" starttime="20211122 15:16:32.586" endtime="20211122 15:16:32.591"/>
+</kw>
+<status status="PASS" starttime="20211122 15:16:32.586" endtime="20211122 15:16:32.591"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5x</arg>
+<arg>2s</arg>
+<arg>Input Text</arg>
+<arg>${SEC/S360_SEARCH_BOX}</arg>
+<arg>${NameOfUser}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SEC/S360_SEARCH_BOX}</arg>
+<arg>${NameOfUser}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211122 15:16:32.592" level="INFO">Typing text 'TestAdminUser1' into text field 'id=searchBox'.</msg>
+<status status="PASS" starttime="20211122 15:16:32.592" endtime="20211122 15:16:32.870"/>
+</kw>
+<status status="PASS" starttime="20211122 15:16:32.592" endtime="20211122 15:16:32.870"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5x</arg>
+<arg>2s</arg>
+<arg>Click Element</arg>
+<arg>${SEC/S360_SEARCH_BTN}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SEC/S360_SEARCH_BTN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211122 15:16:32.871" level="INFO">Clicking element 'id=searchBtn'.</msg>
+<status status="PASS" starttime="20211122 15:16:32.871" endtime="20211122 15:16:32.929"/>
+</kw>
+<status status="PASS" starttime="20211122 15:16:32.870" endtime="20211122 15:16:32.929"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Wait Until Element Is Visible</arg>
+<arg>${SEC/S360_FIRST_USER_IMAGE}</arg>
+<arg>timeout=10</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${SEC/S360_FIRST_USER_IMAGE}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211122 15:16:43.188" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/selenium-screenshot-51.png"&gt;&lt;img src="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/selenium-screenshot-51.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211122 15:16:43.112" endtime="20211122 15:16:43.188"/>
+</kw>
+<msg timestamp="20211122 15:16:43.189" level="FAIL">Element 'xpath=(//*[@id='imageUser_0'])' not visible after 10 seconds.</msg>
+<status status="FAIL" starttime="20211122 15:16:32.929" endtime="20211122 15:16:43.189"/>
+</kw>
+<status status="PASS" starttime="20211122 15:16:32.929" endtime="20211122 15:16:43.189"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Index_Number}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20211122 15:16:43.189" level="INFO">${Index_Number} = 0</msg>
+<status status="PASS" starttime="20211122 15:16:43.189" endtime="20211122 15:16:43.189"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${Usernames_Texts}</var>
+<arg>${SEC/S360_USERNAMES_TEXT}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20211122 15:16:43.190" level="INFO">${Usernames_Texts} = 0</msg>
+<status status="PASS" starttime="20211122 15:16:43.190" endtime="20211122 15:16:43.190"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${Index}</var>
+<value>1</value>
+<value>${Usernames_Texts}+1</value>
+<status status="PASS" starttime="20211122 15:16:43.190" endtime="20211122 15:16:43.190"/>
+</for>
+<msg timestamp="20211122 15:16:43.190" level="INFO">${Index_Number} = 0</msg>
+<status status="PASS" starttime="20211122 15:16:32.586" endtime="20211122 15:16:43.190"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${SEC/S360_USER_IMAGES} [${Index_Number}]</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20211122 15:16:43.190" level="INFO">Simulating Mouse Over on element 'xpath=(//*[contains(@id, 'imageUser_')]) [0]'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211122 15:16:43.288" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/selenium-screenshot-52.png"&gt;&lt;img src="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/selenium-screenshot-52.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211122 15:16:43.206" endtime="20211122 15:16:43.288"/>
+</kw>
+<msg timestamp="20211122 15:16:43.288" level="FAIL">Element with locator 'xpath=(//*[contains(@id, 'imageUser_')]) [0]' not found.</msg>
+<status status="FAIL" starttime="20211122 15:16:43.190" endtime="20211122 15:16:43.288"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SEC/S360_DELETE_USER_BTN} [${Index_Number}]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20211122 15:16:43.289" endtime="20211122 15:16:43.289"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${SEC/S360_DELETE_POP_BTN}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20211122 15:16:43.289" endtime="20211122 15:16:43.289"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SEC/S360_DELETE_POP_BTN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20211122 15:16:43.289" endtime="20211122 15:16:43.289"/>
+</kw>
+<kw name="SEC/S360_Verify Success Message" library="Generic_Keywords">
+<arg>${Delete_User_Msg_ID}</arg>
+<doc>Verifies the message prefix in the message center</doc>
+<status status="NOT RUN" starttime="20211122 15:16:43.289" endtime="20211122 15:16:43.289"/>
+</kw>
+<status status="FAIL" starttime="20211122 15:16:32.585" endtime="20211122 15:16:43.289"/>
+</iter>
+<status status="FAIL" starttime="20211122 15:16:32.585" endtime="20211122 15:16:43.290"/>
+</for>
+<status status="FAIL" starttime="20211122 15:16:32.585" endtime="20211122 15:16:43.290"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${SEC/S360_ADD_NEW_USER_BTN}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20211122 15:16:43.290" endtime="20211122 15:16:43.290"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SEC/S360_ADD_NEW_USER_BTN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20211122 15:16:43.290" endtime="20211122 15:16:43.290"/>
+</kw>
+<kw name="Split String" library="String">
+<var>@{User_Details_1}</var>
+<arg>${User_Details_1}</arg>
+<arg>,</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="NOT RUN" starttime="20211122 15:16:43.290" endtime="20211122 15:16:43.290"/>
+</kw>
+<kw name="SEC/S360_Enters All new User Details" library="Admin_Keywords">
+<arg>@{User_Details_1}</arg>
+<doc>Creates a new user with an associated user group</doc>
+<status status="NOT RUN" starttime="20211122 15:16:43.290" endtime="20211122 15:16:43.290"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${SEC/S360_USER_GROUP}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="NOT RUN" starttime="20211122 15:16:43.290" endtime="20211122 15:16:43.290"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SEC/S360_USER_GROUP}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20211122 15:16:43.290" endtime="20211122 15:16:43.290"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${SEC/S360_FORM_CANCEL_BTN}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<status status="NOT RUN" starttime="20211122 15:16:43.290" endtime="20211122 15:16:43.290"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20211122 15:16:43.290" endtime="20211122 15:16:43.290"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Administrator/Users Groups/Add New User window/CloseTT.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20211122 15:16:43.290" endtime="20211122 15:16:43.290"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${SEC/S360_FLOAT_SAVE_BTN}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<status status="NOT RUN" starttime="20211122 15:16:43.290" endtime="20211122 15:16:43.290"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20211122 15:16:43.290" endtime="20211122 15:16:43.290"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Administrator/Users Groups/Add New User window/SaveTT.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20211122 15:16:43.290" endtime="20211122 15:16:43.290"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SEC/S360_FLOAT_SAVE_BTN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20211122 15:16:43.290" endtime="20211122 15:16:43.290"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${S360_FILTER_MSG_DETAILS_DRPDOWNBTN}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20211122 15:16:43.290" endtime="20211122 15:16:43.290"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Administrator/Users Groups/Add New User window/NewUserSuccessMessage.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20211122 15:16:43.290" endtime="20211122 15:16:43.290"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${SEC/S360_SEND_INVITE_BTN}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<status status="NOT RUN" starttime="20211122 15:16:43.290" endtime="20211122 15:16:43.290"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20211122 15:16:43.290" endtime="20211122 15:16:43.290"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Administrator/Users Groups/Add New User window/SendInvitationTT.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20211122 15:16:43.290" endtime="20211122 15:16:43.290"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${SEC/S360_SAVE_SEND_INVITE_BTN}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<status status="NOT RUN" starttime="20211122 15:16:43.290" endtime="20211122 15:16:43.290"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20211122 15:16:43.290" endtime="20211122 15:16:43.290"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Administrator/Users Groups/Add New User window/SaveSendInvitationTT.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20211122 15:16:43.290" endtime="20211122 15:16:43.290"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${SEC/S360_SAVE_SENDINVITE_CU_BTN}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<status status="NOT RUN" starttime="20211122 15:16:43.290" endtime="20211122 15:16:43.290"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20211122 15:16:43.290" endtime="20211122 15:16:43.290"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Administrator/Users Groups/Add New User window/SaveSendInvitationCUTT.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20211122 15:16:43.290" endtime="20211122 15:16:43.290"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${SEC/S360_FLOAT_CANCEL_BTN}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<status status="NOT RUN" starttime="20211122 15:16:43.290" endtime="20211122 15:16:43.290"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20211122 15:16:43.290" endtime="20211122 15:16:43.290"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Administrator/Users Groups/Add New User window/CancelTT.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20211122 15:16:43.290" endtime="20211122 15:16:43.290"/>
+</kw>
+<kw name="SEC/S360_Scroll Page To Location" library="Generic_Keywords">
+<arg>0</arg>
+<arg>500</arg>
+<doc>Scrolls to the location mentioned</doc>
+<status status="NOT RUN" starttime="20211122 15:16:43.290" endtime="20211122 15:16:43.290"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Administrator/Users Groups/Add New User window/AddNewUsersWindowBottomHalf.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20211122 15:16:43.290" endtime="20211122 15:16:43.290"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SEC/S360_FLOAT_CANCEL_BTN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20211122 15:16:43.290" endtime="20211122 15:16:43.290"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${SEC/S360_CANCEL_POP_BTN}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20211122 15:16:43.290" endtime="20211122 15:16:43.290"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Administrator/Users Groups/Add New User window/SaveCancelConfirmationwindow.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20211122 15:16:43.290" endtime="20211122 15:16:43.290"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SEC/S360_CANCEL_POP_BTN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20211122 15:16:43.290" endtime="20211122 15:16:43.290"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${SEC/S360_ADD_NEW_GROUP_BTN}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" starttime="20211122 15:16:43.290" endtime="20211122 15:16:43.290"/>
+</kw>
+<kw name="SEC/S360_Scroll Page To Location" library="Generic_Keywords">
+<arg>0</arg>
+<arg>0</arg>
+<doc>Scrolls to the location mentioned</doc>
+<status status="NOT RUN" starttime="20211122 15:16:43.290" endtime="20211122 15:16:43.290"/>
+</kw>
+<doc>Verifies translation for Add New User window</doc>
+<tag>TC05</tag>
+<status status="FAIL" starttime="20211122 15:16:32.583" endtime="20211122 15:16:43.290">Element with locator 'xpath=(//*[contains(@id, 'imageUser_')]) [0]' not found.</status>
+</test>
+<test id="s1-t6" name="TC_06 Verify Security Policies page">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${S360_ADMINISTRATOR_RIBBON}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20211122 15:16:43.290" endtime="20211122 15:16:43.306"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${S360_ADMINISTRATOR_RIBBON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211122 15:16:43.306" level="INFO">Clicking element '//a[@id='Administrator']'.</msg>
+<status status="PASS" starttime="20211122 15:16:43.306" endtime="20211122 15:16:43.402"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${S360_SECURITY_POLICIES_CARD}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20211122 15:16:43.403" endtime="20211122 15:16:43.814"/>
+</kw>
+<kw name="SEC/S360 Navigate to Card" library="Generic_Keywords">
+<arg>${S360_SECURITY_POLICIES_CARD}</arg>
+<arg>${S360_ACTIVATE_SYSTECH360_SCOPE_POLICIES}</arg>
+<doc>Navigate to respective card</doc>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<var>${Status}</var>
+<arg>${CardLocator}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20211122 15:16:43.829" level="INFO">Element 'id=preferenceCardName_1' is displayed.</msg>
+<msg timestamp="20211122 15:16:43.829" level="INFO">${Status} = None</msg>
+<status status="PASS" starttime="20211122 15:16:43.814" endtime="20211122 15:16:43.829"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${Status}=='False'</arg>
+<arg>SEC/S360 Navigate To Landing Page</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20211122 15:16:43.829" endtime="20211122 15:16:43.829"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${CardLocator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211122 15:16:43.829" endtime="20211122 15:16:43.852"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>3x</arg>
+<arg>2s</arg>
+<arg>Click Element</arg>
+<arg>${CardLocator}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CardLocator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211122 15:16:43.852" level="INFO">Clicking element 'id=preferenceCardName_1'.</msg>
+<status status="PASS" starttime="20211122 15:16:43.852" endtime="20211122 15:16:43.924"/>
+</kw>
+<status status="PASS" starttime="20211122 15:16:43.852" endtime="20211122 15:16:43.924"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211122 15:16:45.935" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20211122 15:16:43.924" endtime="20211122 15:16:45.935"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${ValidationLocator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211122 15:16:45.935" endtime="20211122 15:16:45.950"/>
+</kw>
+<status status="PASS" starttime="20211122 15:16:43.814" endtime="20211122 15:16:45.950"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Administrator/Security Policies/SecurityPolicies.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211122 15:16:46.041" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Security%20Policies/SecurityPolicies.png"&gt;&lt;img src="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Security%20Policies/SecurityPolicies.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211122 15:16:45.950" endtime="20211122 15:16:46.041"/>
+</kw>
+<doc>Verifies translation for Security Policies page</doc>
+<tag>TC06</tag>
+<status status="PASS" starttime="20211122 15:16:43.290" endtime="20211122 15:16:46.041"/>
+</test>
+<test id="s1-t7" name="TC_07 Verify Scope Policy page">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${S360_ADMINISTRATOR_RIBBON_SEC_POLICY}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211122 15:16:46.041" level="INFO">Clicking element '//a[@id='homeSelected']'.</msg>
+<status status="PASS" starttime="20211122 15:16:46.041" endtime="20211122 15:16:46.084"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${S360_SCOPE_POLICY_CARD}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20211122 15:16:46.085" endtime="20211122 15:16:46.504"/>
+</kw>
+<kw name="SEC/S360 Navigate to Card" library="Generic_Keywords">
+<arg>${S360_SCOPE_POLICY_CARD}</arg>
+<arg>${SEC/S360_CARDS_ITEMS_PERPAGE_DD}</arg>
+<doc>Navigate to respective card</doc>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<var>${Status}</var>
+<arg>${CardLocator}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20211122 15:16:46.520" level="INFO">Element 'id=preferenceCardName_2' is displayed.</msg>
+<msg timestamp="20211122 15:16:46.520" level="INFO">${Status} = None</msg>
+<status status="PASS" starttime="20211122 15:16:46.504" endtime="20211122 15:16:46.520"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${Status}=='False'</arg>
+<arg>SEC/S360 Navigate To Landing Page</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20211122 15:16:46.520" endtime="20211122 15:16:46.520"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${CardLocator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211122 15:16:46.520" endtime="20211122 15:16:46.520"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>3x</arg>
+<arg>2s</arg>
+<arg>Click Element</arg>
+<arg>${CardLocator}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CardLocator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211122 15:16:46.520" level="INFO">Clicking element 'id=preferenceCardName_2'.</msg>
+<status status="PASS" starttime="20211122 15:16:46.520" endtime="20211122 15:16:46.568"/>
+</kw>
+<status status="PASS" starttime="20211122 15:16:46.520" endtime="20211122 15:16:46.568"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211122 15:16:48.577" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20211122 15:16:46.568" endtime="20211122 15:16:48.577"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${ValidationLocator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211122 15:16:48.577" endtime="20211122 15:16:48.593"/>
+</kw>
+<status status="PASS" starttime="20211122 15:16:46.504" endtime="20211122 15:16:48.593"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Administrator/Scope Policy/ScopePolicy.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211122 15:16:48.667" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Scope%20Policy/ScopePolicy.png"&gt;&lt;img src="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Scope%20Policy/ScopePolicy.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211122 15:16:48.593" endtime="20211122 15:16:48.667"/>
+</kw>
+<doc>Verifies translation for Scope Policy page</doc>
+<tag>TC07</tag>
+<status status="PASS" starttime="20211122 15:16:46.041" endtime="20211122 15:16:48.668"/>
+</test>
+<test id="s1-t8" name="TC_08 Verify File Storage Utilization page">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${S360_ADMINISTRATOR_RIBBON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211122 15:16:48.670" level="INFO">Clicking element '//a[@id='Administrator']'.</msg>
+<status status="PASS" starttime="20211122 15:16:48.670" endtime="20211122 15:16:48.702"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${SEC/S360_ADMIN_FILE_STORAGE_UTILIZATION_CARD_zh}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20211122 15:16:48.703" endtime="20211122 15:16:49.140"/>
+</kw>
+<kw name="SEC/S360 Navigate to Card" library="Generic_Keywords">
+<arg>${SEC/S360_ADMIN_FILE_STORAGE_UTILIZATION_CARD_zh}</arg>
+<arg>${S360_FILE_STORAGE_UTILIZATION_DETAILS_TAB}</arg>
+<doc>Navigate to respective card</doc>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<var>${Status}</var>
+<arg>${CardLocator}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20211122 15:16:49.156" level="INFO">Element '//h4[contains(@id, 'preferenceCardName_') and text()='文檔存储利用']' is displayed.</msg>
+<msg timestamp="20211122 15:16:49.156" level="INFO">${Status} = None</msg>
+<status status="PASS" starttime="20211122 15:16:49.140" endtime="20211122 15:16:49.156"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${Status}=='False'</arg>
+<arg>SEC/S360 Navigate To Landing Page</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20211122 15:16:49.156" endtime="20211122 15:16:49.156"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${CardLocator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211122 15:16:49.156" endtime="20211122 15:16:49.162"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>3x</arg>
+<arg>2s</arg>
+<arg>Click Element</arg>
+<arg>${CardLocator}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CardLocator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211122 15:16:49.162" level="INFO">Clicking element '//h4[contains(@id, 'preferenceCardName_') and text()='文檔存储利用']'.</msg>
+<status status="PASS" starttime="20211122 15:16:49.162" endtime="20211122 15:16:49.206"/>
+</kw>
+<status status="PASS" starttime="20211122 15:16:49.162" endtime="20211122 15:16:49.206"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211122 15:16:51.208" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20211122 15:16:49.206" endtime="20211122 15:16:51.208"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${ValidationLocator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211122 15:16:51.208" endtime="20211122 15:16:51.225"/>
+</kw>
+<status status="PASS" starttime="20211122 15:16:49.140" endtime="20211122 15:16:51.225"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Administrator/File Storage Utilization/FileStorageUtilizationGraphicalTabUpperHalf.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211122 15:16:51.365" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/File%20Storage%20Utilization/FileStorageUtilizationGraphicalTabUpperHalf.png"&gt;&lt;img src="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/File%20Storage%20Utilization/FileStorageUtilizationGraphicalTabUpperHalf.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211122 15:16:51.226" endtime="20211122 15:16:51.366"/>
+</kw>
+<kw name="SEC/S360_Scroll Page To Location" library="Generic_Keywords">
+<arg>0</arg>
+<arg>500</arg>
+<doc>Scrolls to the location mentioned</doc>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(${x_location},${y_location})</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20211122 15:16:51.367" level="INFO">Executing JavaScript:
+window.scrollTo(0,500)
+Without any arguments.</msg>
+<status status="PASS" starttime="20211122 15:16:51.367" endtime="20211122 15:16:51.372"/>
+</kw>
+<status status="PASS" starttime="20211122 15:16:51.366" endtime="20211122 15:16:51.372"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211122 15:16:52.373" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20211122 15:16:51.372" endtime="20211122 15:16:52.373"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Administrator/File Storage Utilization/FileStorageUtilizationGraphicalTabLowerHalf.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211122 15:16:52.502" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/File%20Storage%20Utilization/FileStorageUtilizationGraphicalTabLowerHalf.png"&gt;&lt;img src="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/File%20Storage%20Utilization/FileStorageUtilizationGraphicalTabLowerHalf.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211122 15:16:52.374" endtime="20211122 15:16:52.502"/>
+</kw>
+<kw name="SEC/S360_Scroll Page To Location" library="Generic_Keywords">
+<arg>0</arg>
+<arg>0</arg>
+<doc>Scrolls to the location mentioned</doc>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(${x_location},${y_location})</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20211122 15:16:52.503" level="INFO">Executing JavaScript:
+window.scrollTo(0,0)
+Without any arguments.</msg>
+<status status="PASS" starttime="20211122 15:16:52.503" endtime="20211122 15:16:52.507"/>
+</kw>
+<status status="PASS" starttime="20211122 15:16:52.502" endtime="20211122 15:16:52.507"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${S360_FILE_STORAGE_UTILIZATION_DETAILS_TAB}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211122 15:16:52.508" level="INFO">Clicking element '//label[@id='childrenTab']'.</msg>
+<status status="PASS" starttime="20211122 15:16:52.507" endtime="20211122 15:16:52.572"/>
+</kw>
+<kw name="SEC/S360_Scroll Page To Location" library="Generic_Keywords">
+<arg>0</arg>
+<arg>500</arg>
+<doc>Scrolls to the location mentioned</doc>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(${x_location},${y_location})</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20211122 15:16:52.577" level="INFO">Executing JavaScript:
+window.scrollTo(0,500)
+Without any arguments.</msg>
+<status status="PASS" starttime="20211122 15:16:52.576" endtime="20211122 15:16:52.583"/>
+</kw>
+<status status="PASS" starttime="20211122 15:16:52.576" endtime="20211122 15:16:52.583"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Administrator/File Storage Utilization/FileStorageUtilizationDetailsTab.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211122 15:16:52.690" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/File%20Storage%20Utilization/FileStorageUtilizationDetailsTab.png"&gt;&lt;img src="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/File%20Storage%20Utilization/FileStorageUtilizationDetailsTab.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211122 15:16:52.584" endtime="20211122 15:16:52.691"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SEC/S360_SORT_BY_DD}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211122 15:16:52.691" level="INFO">Clicking element '//*[@id="sortByList"]'.</msg>
+<status status="PASS" starttime="20211122 15:16:52.691" endtime="20211122 15:16:52.741"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Administrator/File Storage Utilization/FileStorageUtilizationDetailsTabSortByList.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211122 15:16:52.887" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/File%20Storage%20Utilization/FileStorageUtilizationDetailsTabSortByList.png"&gt;&lt;img src="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/File%20Storage%20Utilization/FileStorageUtilizationDetailsTabSortByList.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211122 15:16:52.742" endtime="20211122 15:16:52.887"/>
+</kw>
+<doc>Verifies translation for File Storage Utilization page</doc>
+<tag>TC08</tag>
+<status status="PASS" starttime="20211122 15:16:48.669" endtime="20211122 15:16:52.888"/>
+</test>
+<test id="s1-t9" name="TC_09 Verify Data Pool Categories page">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${S360_ADMINISTRATOR_RIBBON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211122 15:16:52.890" level="INFO">Clicking element '//a[@id='Administrator']'.</msg>
+<status status="PASS" starttime="20211122 15:16:52.890" endtime="20211122 15:16:52.937"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${SEC/S360_ADMIN_DATA_POOL_CATEGORIES_CARD_zh}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20211122 15:16:52.938" endtime="20211122 15:16:53.364"/>
+</kw>
+<kw name="SEC/S360 Navigate to Card" library="Generic_Keywords">
+<arg>${SEC/S360_ADMIN_DATA_POOL_CATEGORIES_CARD_zh}</arg>
+<arg>${S360_DATA_POOL_REFRESH_ICON_zh}</arg>
+<doc>Navigate to respective card</doc>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<var>${Status}</var>
+<arg>${CardLocator}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20211122 15:16:53.379" level="INFO">Element '//h4[contains(@id, 'preferenceCardName_') and text()='数据池类别']' is displayed.</msg>
+<msg timestamp="20211122 15:16:53.379" level="INFO">${Status} = None</msg>
+<status status="PASS" starttime="20211122 15:16:53.364" endtime="20211122 15:16:53.379"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${Status}=='False'</arg>
+<arg>SEC/S360 Navigate To Landing Page</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20211122 15:16:53.379" endtime="20211122 15:16:53.379"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${CardLocator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211122 15:16:53.379" endtime="20211122 15:16:53.395"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>3x</arg>
+<arg>2s</arg>
+<arg>Click Element</arg>
+<arg>${CardLocator}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CardLocator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211122 15:16:53.395" level="INFO">Clicking element '//h4[contains(@id, 'preferenceCardName_') and text()='数据池类别']'.</msg>
+<status status="PASS" starttime="20211122 15:16:53.395" endtime="20211122 15:16:53.431"/>
+</kw>
+<status status="PASS" starttime="20211122 15:16:53.395" endtime="20211122 15:16:53.431"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211122 15:16:55.435" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20211122 15:16:53.431" endtime="20211122 15:16:55.435"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${ValidationLocator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211122 15:16:55.435" endtime="20211122 15:16:55.450"/>
+</kw>
+<status status="PASS" starttime="20211122 15:16:53.364" endtime="20211122 15:16:55.450"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${S360_DATA_POOL_REFRESH_ICON_zh}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20211122 15:16:55.450" endtime="20211122 15:16:55.450"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Administrator/Data Pool Categories/DataPoolCategories.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211122 15:16:55.539" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Data%20Pool%20Categories/DataPoolCategories.png"&gt;&lt;img src="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Data%20Pool%20Categories/DataPoolCategories.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211122 15:16:55.450" endtime="20211122 15:16:55.539"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${S360_DATA_POOL_REFRESH_ICON_zh}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20211122 15:16:55.540" level="INFO">Simulating Mouse Over on element '//i[@title="刷新"]'.</msg>
+<status status="PASS" starttime="20211122 15:16:55.540" endtime="20211122 15:16:55.821"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211122 15:16:56.824" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20211122 15:16:55.821" endtime="20211122 15:16:56.824"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Administrator/Data Pool Categories/DataPoolRefreshIconTT.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211122 15:16:56.898" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Data%20Pool%20Categories/DataPoolRefreshIconTT.png"&gt;&lt;img src="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Data%20Pool%20Categories/DataPoolRefreshIconTT.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211122 15:16:56.824" endtime="20211122 15:16:56.898"/>
+</kw>
+<doc>Verifies translation for Data Pool Categories page</doc>
+<tag>TC09</tag>
+<status status="PASS" starttime="20211122 15:16:52.889" endtime="20211122 15:16:56.899"/>
+</test>
+<test id="s1-t10" name="TC_10 Verify Audit page">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${S360_ADMINISTRATOR_RIBBON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211122 15:16:56.901" level="INFO">Clicking element '//a[@id='Administrator']'.</msg>
+<status status="PASS" starttime="20211122 15:16:56.901" endtime="20211122 15:16:56.934"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${SEC/S360_ADMIN_AUDIT_CARD_zh}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20211122 15:16:56.935" endtime="20211122 15:16:57.379"/>
+</kw>
+<kw name="SEC/S360 Navigate to Card" library="Generic_Keywords">
+<arg>${SEC/S360_ADMIN_AUDIT_CARD_zh}</arg>
+<arg>${S360_AUDIT_FILTER_ICON}</arg>
+<doc>Navigate to respective card</doc>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<var>${Status}</var>
+<arg>${CardLocator}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20211122 15:16:57.394" level="INFO">Element '//h4[contains(@id, 'preferenceCardName_') and text()='审核']' is displayed.</msg>
+<msg timestamp="20211122 15:16:57.394" level="INFO">${Status} = None</msg>
+<status status="PASS" starttime="20211122 15:16:57.380" endtime="20211122 15:16:57.394"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${Status}=='False'</arg>
+<arg>SEC/S360 Navigate To Landing Page</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20211122 15:16:57.394" endtime="20211122 15:16:57.394"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${CardLocator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211122 15:16:57.394" endtime="20211122 15:16:57.406"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>3x</arg>
+<arg>2s</arg>
+<arg>Click Element</arg>
+<arg>${CardLocator}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CardLocator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211122 15:16:57.406" level="INFO">Clicking element '//h4[contains(@id, 'preferenceCardName_') and text()='审核']'.</msg>
+<status status="PASS" starttime="20211122 15:16:57.406" endtime="20211122 15:16:57.452"/>
+</kw>
+<status status="PASS" starttime="20211122 15:16:57.406" endtime="20211122 15:16:57.452"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211122 15:16:59.461" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20211122 15:16:57.452" endtime="20211122 15:16:59.461"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${ValidationLocator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211122 15:16:59.461" endtime="20211122 15:16:59.477"/>
+</kw>
+<status status="PASS" starttime="20211122 15:16:57.380" endtime="20211122 15:16:59.477"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${S360_AUDIT_FILTER_ICON}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20211122 15:16:59.477" endtime="20211122 15:16:59.493"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Administrator/Audit/1.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211122 15:16:59.568" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Audit/1.png"&gt;&lt;img src="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Audit/1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211122 15:16:59.493" endtime="20211122 15:16:59.568"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${S360_AUDIT_FILTER_ICON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211122 15:16:59.569" level="INFO">Clicking element '//i[@id='lblAddFilter']'.</msg>
+<status status="PASS" starttime="20211122 15:16:59.568" endtime="20211122 15:17:00.322"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${SEC/S360_FLOAT_SAVE_BTN}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20211122 15:17:00.323" level="INFO">Simulating Mouse Over on element '//button[@id="floatBtn_SaveTxt"]'.</msg>
+<status status="PASS" starttime="20211122 15:17:00.323" endtime="20211122 15:17:00.591"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211122 15:17:01.597" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20211122 15:17:00.593" endtime="20211122 15:17:01.597"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Administrator/Audit/AuditFilterSavebuttonTT.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211122 15:17:01.687" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Audit/AuditFilterSavebuttonTT.png"&gt;&lt;img src="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Audit/AuditFilterSavebuttonTT.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211122 15:17:01.597" endtime="20211122 15:17:01.687"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${SEC/S360_ADMIN_AUDIT_FILTER_SAVE_zh}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20211122 15:17:01.688" level="INFO">Simulating Mouse Over on element '//button[@id='floatBtn_ApplyTxt']'.</msg>
+<status status="PASS" starttime="20211122 15:17:01.688" endtime="20211122 15:17:01.956"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211122 15:17:02.970" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20211122 15:17:01.957" endtime="20211122 15:17:02.970"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Administrator/Audit/AuditFilterApplybuttonTT.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211122 15:17:03.057" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Audit/AuditFilterApplybuttonTT.png"&gt;&lt;img src="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Audit/AuditFilterApplybuttonTT.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211122 15:17:02.970" endtime="20211122 15:17:03.057"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${SEC/S360_FLOAT_CANCEL_BTN}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20211122 15:17:03.058" level="INFO">Simulating Mouse Over on element 'id=floatBtn_CancelTxt'.</msg>
+<status status="PASS" starttime="20211122 15:17:03.058" endtime="20211122 15:17:03.329"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211122 15:17:04.342" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20211122 15:17:03.330" endtime="20211122 15:17:04.342"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Administrator/Audit/AuditFilterCancelbuttonTT.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211122 15:17:04.420" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Audit/AuditFilterCancelbuttonTT.png"&gt;&lt;img src="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Audit/AuditFilterCancelbuttonTT.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211122 15:17:04.342" endtime="20211122 15:17:04.420"/>
+</kw>
+<kw name="SEC/S360_Scroll Page To Location" library="Generic_Keywords">
+<arg>0</arg>
+<arg>300</arg>
+<doc>Scrolls to the location mentioned</doc>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(${x_location},${y_location})</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20211122 15:17:04.421" level="INFO">Executing JavaScript:
+window.scrollTo(0,300)
+Without any arguments.</msg>
+<status status="PASS" starttime="20211122 15:17:04.421" endtime="20211122 15:17:04.431"/>
+</kw>
+<status status="PASS" starttime="20211122 15:17:04.421" endtime="20211122 15:17:04.432"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Administrator/Audit/2.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211122 15:17:04.515" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Audit/2.png"&gt;&lt;img src="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Audit/2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211122 15:17:04.432" endtime="20211122 15:17:04.515"/>
+</kw>
+<kw name="SEC/S360_Scroll Page To Location" library="Generic_Keywords">
+<arg>0</arg>
+<arg>950</arg>
+<doc>Scrolls to the location mentioned</doc>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(${x_location},${y_location})</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20211122 15:17:04.517" level="INFO">Executing JavaScript:
+window.scrollTo(0,950)
+Without any arguments.</msg>
+<status status="PASS" starttime="20211122 15:17:04.517" endtime="20211122 15:17:04.527"/>
+</kw>
+<status status="PASS" starttime="20211122 15:17:04.516" endtime="20211122 15:17:04.527"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Administrator/Audit/3.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211122 15:17:04.616" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Audit/3.png"&gt;&lt;img src="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Audit/3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211122 15:17:04.527" endtime="20211122 15:17:04.616"/>
+</kw>
+<kw name="SEC/S360_Scroll Page To Location" library="Generic_Keywords">
+<arg>0</arg>
+<arg>1500</arg>
+<doc>Scrolls to the location mentioned</doc>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(${x_location},${y_location})</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20211122 15:17:04.618" level="INFO">Executing JavaScript:
+window.scrollTo(0,1500)
+Without any arguments.</msg>
+<status status="PASS" starttime="20211122 15:17:04.617" endtime="20211122 15:17:04.626"/>
+</kw>
+<status status="PASS" starttime="20211122 15:17:04.617" endtime="20211122 15:17:04.626"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Administrator/Audit/4.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211122 15:17:04.722" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Audit/4.png"&gt;&lt;img src="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Audit/4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211122 15:17:04.627" endtime="20211122 15:17:04.722"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${SEC/S360_AUDIT_FILTER_SEL_ITEM_2_SELECTED_zh}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20211122 15:17:04.723" level="INFO">Simulating Mouse Over on element '//button[@title="将已选择的项目移动到”已选择”清单"]'.</msg>
+<status status="PASS" starttime="20211122 15:17:04.723" endtime="20211122 15:17:04.996"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211122 15:17:06.008" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20211122 15:17:04.997" endtime="20211122 15:17:06.008"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Administrator/Audit/SelectedItem2SelectedTT.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211122 15:17:06.088" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Audit/SelectedItem2SelectedTT.png"&gt;&lt;img src="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Audit/SelectedItem2SelectedTT.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211122 15:17:06.008" endtime="20211122 15:17:06.088"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${SEC/S360_AUDIT_FILTER_ALL_ITEM_2_SELECTED_zh}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20211122 15:17:06.089" level="INFO">Simulating Mouse Over on element '//button[@title="将所有项目移动到”已选择”清单"]'.</msg>
+<status status="PASS" starttime="20211122 15:17:06.089" endtime="20211122 15:17:06.373"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211122 15:17:07.382" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20211122 15:17:06.373" endtime="20211122 15:17:07.382"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Administrator/Audit/AllItem2SelectedTT.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211122 15:17:07.510" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Audit/AllItem2SelectedTT.png"&gt;&lt;img src="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Audit/AllItem2SelectedTT.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211122 15:17:07.382" endtime="20211122 15:17:07.510"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${SEC/S360_AUDIT_FILTER_SEL_ITEM_2_AVAILABLE_zh}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20211122 15:17:07.512" level="INFO">Simulating Mouse Over on element '//button[@title="将已选择的项目移动到”可用”清单"]'.</msg>
+<status status="PASS" starttime="20211122 15:17:07.511" endtime="20211122 15:17:07.807"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211122 15:17:08.819" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20211122 15:17:07.807" endtime="20211122 15:17:08.819"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Administrator/Audit/SelectedItem2AvailableTT.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211122 15:17:08.904" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Audit/SelectedItem2AvailableTT.png"&gt;&lt;img src="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Audit/SelectedItem2AvailableTT.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211122 15:17:08.819" endtime="20211122 15:17:08.904"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${SEC/S360_AUDIT_FILTER_ALL_ITEM_2_AVAILABLE_zh}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20211122 15:17:08.905" level="INFO">Simulating Mouse Over on element '//button[@title="将所有项目移动到”可用”清单"]'.</msg>
+<status status="PASS" starttime="20211122 15:17:08.905" endtime="20211122 15:17:09.190"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211122 15:17:10.192" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20211122 15:17:09.190" endtime="20211122 15:17:10.192"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Administrator/Audit/AllItem2AvailableTT.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211122 15:17:10.270" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Audit/AllItem2AvailableTT.png"&gt;&lt;img src="../../Systech360_Automation-master/systech360_automation/RF_Systech360_Automation/Results/TranslationScreenshots/Administrator/Audit/AllItem2AvailableTT.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211122 15:17:10.192" endtime="20211122 15:17:10.270"/>
+</kw>
+<doc>Verifies translation for Audit page</doc>
+<tag>TC10</tag>
+<status status="PASS" starttime="20211122 15:16:56.900" endtime="20211122 15:17:10.271"/>
+</test>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20211122 15:17:10.274" endtime="20211122 15:17:12.421"/>
+</kw>
+<doc>Necessary Libraries and Resources file are mentioned below</doc>
+<status status="FAIL" starttime="20211122 15:15:21.935" endtime="20211122 15:17:12.421"/>
+</suite>
+<statistics>
+<total>
+<stat pass="9" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">TC 01</stat>
+<stat pass="1" fail="0" skip="0">TC 02</stat>
+<stat pass="1" fail="0" skip="0">TC 03</stat>
+<stat pass="1" fail="0" skip="0">TC 04</stat>
+<stat pass="0" fail="1" skip="0">TC05</stat>
+<stat pass="1" fail="0" skip="0">TC06</stat>
+<stat pass="1" fail="0" skip="0">TC07</stat>
+<stat pass="1" fail="0" skip="0">TC08</stat>
+<stat pass="1" fail="0" skip="0">TC09</stat>
+<stat pass="1" fail="0" skip="0">TC10</stat>
+</tag>
+<suite>
+<stat pass="9" fail="1" skip="0" id="s1" name="Administrator">Administrator</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20211122 15:15:22.233" level="ERROR">Error in file 'C:\Manas Milind\Automation\My Fork\Systech360_Automation\RF_Systech360_Automation\Keywords\Generic_Keywords.robot' on line 20: Variable '${Selenium_Timeout}' not found.</msg>
+</errors>
+</robot>

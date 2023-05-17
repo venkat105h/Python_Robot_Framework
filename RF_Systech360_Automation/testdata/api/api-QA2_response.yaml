@@ -1,0 +1,24 @@
+#Operator Response Data
+status_Attribute: SUCCESS
+error_status_Attribute: ERROR
+pkid_Attribute: 27
+entityType_Attribute: productionLot
+level_Attribute: Pallet
+noteType_Attribute: System
+user_Attribute: System
+notification_getfiles_pkid: 42
+notification_getfiles_uniObjectTypeId:  541
+entitypkid_Attribute: 6
+uniObjectTypeId_Attribute: 520
+dataValueID_Attribute: 544
+type_Attribute: Error
+dataGroupId_Attribute: 1
+dataGroupName_Attribute: General
+productionview_count_Attribute: 2
+notification_getnotes_by_NotID_count_Attribute: 2
+notification_getnotes_by_NotID_user_Attribute: System
+notification_getnotes_by_ComID_count_Attribute: 13
+notification_getnotes_by_ComID_user_Attribute: System
+notifications_by_FL_pkid_Attribute: 32
+notifications_by_FL_uniObjectTypeId_Attribute:  538
+

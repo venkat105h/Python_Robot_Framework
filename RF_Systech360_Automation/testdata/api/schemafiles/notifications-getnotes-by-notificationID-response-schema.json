@@ -1,0 +1,109 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "resourcePath": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "count": {
+      "type": "integer"
+    },
+    "dataValue": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "user": {
+              "type": "string"
+            },
+            "date": {
+              "type": "string"
+            },
+            "comment": {
+              "type": "null"
+            },
+            "description": {
+              "type": "null"
+            },
+            "noteType": {
+              "type": "string"
+            },
+            "translateKey": {
+              "type": "string"
+            },
+            "translateValues": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "required": [
+            "user",
+            "date",
+            "comment",
+            "description",
+            "noteType",
+            "translateKey",
+            "translateValues"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "user": {
+              "type": "string"
+            },
+            "date": {
+              "type": "string"
+            },
+            "comment": {
+              "type": "null"
+            },
+            "description": {
+              "type": "null"
+            },
+            "noteType": {
+              "type": "string"
+            },
+            "translateKey": {
+              "type": "string"
+            },
+            "translateValues": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "required": [
+            "user",
+            "date",
+            "comment",
+            "description",
+            "noteType",
+            "translateKey",
+            "translateValues"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "resourcePath",
+    "status",
+    "count",
+    "dataValue"
+  ]
+}

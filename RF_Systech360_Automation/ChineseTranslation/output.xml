@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.11.3 on win32)" generated="20230427 15:58:18.904" rpa="false" schemaversion="3">
+<suite id="s1" name="Administrator" source="D:\DOVER\Systech360_Automation_Akash\RF_Systech360_Automation\ChineseTranslation\Administrator.robot">
+<kw name="Run Keywords" library="BuiltIn" type="SETUP">
+<arg>SEC/S360_Open Browser And Enter URL</arg>
+<arg>${URL}</arg>
+<arg>AND</arg>
+<arg>Select From List by label</arg>
+<arg>${SEC/S360_LANGUAGE_SELECT_BOX}</arg>
+<arg>${SEC/S360_LANGUAGE_SELECT_VALUE}</arg>
+<arg>AND</arg>
+<arg>SEC/S360_Enter Credentials and Login To Solution</arg>
+<arg>${Username}</arg>
+<arg>${Password}</arg>
+<arg>${AdminRole}</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="SEC/S360_Open Browser And Enter URL" library="Generic_Keywords">
+<arg>${URL}</arg>
+<doc>Launched browser, Navigates to specified URL</doc>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>10x</arg>
+<arg>2s</arg>
+<arg>Open Browser</arg>
+<arg>${Var_URL}</arg>
+<arg>${Browser_type}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${Var_URL}</arg>
+<arg>${Browser_type}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230427 15:58:20.134" level="INFO">Opening browser 'Chrome' to base url 'https://dd-systech-qa2.systechcloud.net/Systech360/#/login'.</msg>
+<status status="PASS" starttime="20230427 15:58:20.134" endtime="20230427 15:58:30.915"/>
+</kw>
+<status status="PASS" starttime="20230427 15:58:20.134" endtime="20230427 15:58:30.915"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230427 15:58:30.915" endtime="20230427 15:58:31.043"/>
+</kw>
+<status status="PASS" starttime="20230427 15:58:20.134" endtime="20230427 15:58:31.043"/>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>${SEC/S360_LANGUAGE_SELECT_BOX}</arg>
+<arg>${SEC/S360_LANGUAGE_SELECT_VALUE}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20230427 15:58:31.043" level="INFO">Selecting options from selection list 'id=language-list' by label 中文.</msg>
+<msg timestamp="20230427 15:58:31.365" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230427 15:58:31.366" level="FAIL">List with locator 'id=language-list' not found.</msg>
+<status status="FAIL" starttime="20230427 15:58:31.043" endtime="20230427 15:58:31.373"/>
+</kw>
+<status status="FAIL" starttime="20230427 15:58:20.134" endtime="20230427 15:58:31.373"/>
+</kw>
+<test id="s1-t1" name="TC_01 Verify Landing Page" line="44">
+<doc>Verifies translation of texts for the landing page</doc>
+<tag>TC01</tag>
+<status status="FAIL" starttime="20230427 15:58:31.373" endtime="20230427 15:58:31.375">Parent suite setup failed:
+List with locator 'id=language-list' not found.</status>
+</test>
+<test id="s1-t2" name="TC_02 Verify hover texts, menu and drop downs items" line="50">
+<doc>Verifies translation of all the hover texts, menu items and drop downs</doc>
+<tag>TC02</tag>
+<status status="FAIL" starttime="20230427 15:58:31.377" endtime="20230427 15:58:31.378">Parent suite setup failed:
+List with locator 'id=language-list' not found.</status>
+</test>
+<test id="s1-t3" name="TC_03 Verify Users/Groups page" line="96">
+<doc>Verifies translation of texts for Users/Groups page</doc>
+<tag>TC03</tag>
+<status status="FAIL" starttime="20230427 15:58:31.380" endtime="20230427 15:58:31.381">Parent suite setup failed:
+List with locator 'id=language-list' not found.</status>
+</test>
+<test id="s1-t4" name="TC_04 Verify Add New Group under Users/Groups page" line="122">
+<doc>Verifies translation for Add New Group functionality</doc>
+<tag>TC04</tag>
+<status status="FAIL" starttime="20230427 15:58:31.382" endtime="20230427 15:58:31.382">Parent suite setup failed:
+List with locator 'id=language-list' not found.</status>
+</test>
+<test id="s1-t5" name="TC_05 Verify Add New User window under Users/Groups page" line="172">
+<doc>Verifies translation for Add New User window</doc>
+<tag>TC05</tag>
+<status status="FAIL" starttime="20230427 15:58:31.382" endtime="20230427 15:58:31.382">Parent suite setup failed:
+List with locator 'id=language-list' not found.</status>
+</test>
+<test id="s1-t6" name="TC_06 Verify Security Policies page" line="215">
+<doc>Verifies translation for Security Policies page</doc>
+<tag>TC06</tag>
+<status status="FAIL" starttime="20230427 15:58:31.382" endtime="20230427 15:58:31.382">Parent suite setup failed:
+List with locator 'id=language-list' not found.</status>
+</test>
+<test id="s1-t7" name="TC_07 Verify Scope Policy page" line="225">
+<doc>Verifies translation for Scope Policy page</doc>
+<tag>TC07</tag>
+<status status="FAIL" starttime="20230427 15:58:31.382" endtime="20230427 15:58:31.382">Parent suite setup failed:
+List with locator 'id=language-list' not found.</status>
+</test>
+<test id="s1-t8" name="TC_08 Verify File Storage Utilization page" line="234">
+<doc>Verifies translation for File Storage Utilization page</doc>
+<tag>TC08</tag>
+<status status="FAIL" starttime="20230427 15:58:31.382" endtime="20230427 15:58:31.382">Parent suite setup failed:
+List with locator 'id=language-list' not found.</status>
+</test>
+<test id="s1-t9" name="TC_09 Verify Data Pool Categories page" line="252">
+<doc>Verifies translation for Data Pool Categories page</doc>
+<tag>TC09</tag>
+<status status="FAIL" starttime="20230427 15:58:31.382" endtime="20230427 15:58:31.382">Parent suite setup failed:
+List with locator 'id=language-list' not found.</status>
+</test>
+<test id="s1-t10" name="TC_10 Verify Audit page" line="265">
+<doc>Verifies translation for Audit page</doc>
+<tag>TC10</tag>
+<status status="FAIL" starttime="20230427 15:58:31.382" endtime="20230427 15:58:31.382">Parent suite setup failed:
+List with locator 'id=language-list' not found.</status>
+</test>
+<test id="s1-t11" name="TC_11 Verify Landing Page" line="304">
+<doc>Verifies translation of texts for the landing page</doc>
+<tag>TC11</tag>
+<status status="FAIL" starttime="20230427 15:58:31.382" endtime="20230427 15:58:31.382">Parent suite setup failed:
+List with locator 'id=language-list' not found.</status>
+</test>
+<test id="s1-t12" name="TC_12 Verify Scenes Page" line="320">
+<doc>Verifies translation of texts for the Scenes page</doc>
+<tag>TC12</tag>
+<status status="FAIL" starttime="20230427 15:58:31.382" endtime="20230427 15:58:31.382">Parent suite setup failed:
+List with locator 'id=language-list' not found.</status>
+</test>
+<test id="s1-t13" name="TC_13 Verify Add New Scenes Page" line="373">
+<doc>Verifies translation of texts for the Add New Scenes page</doc>
+<tag>TC13</tag>
+<status status="FAIL" starttime="20230427 15:58:31.382" endtime="20230427 15:58:31.382">Parent suite setup failed:
+List with locator 'id=language-list' not found.</status>
+</test>
+<test id="s1-t14" name="TC_14 Verify Organizations Page &amp; Add Organizations window" line="423">
+<doc>Verifies translation of texts for the Organizations page &amp; Add Organizations window</doc>
+<tag>TC14</tag>
+<status status="FAIL" starttime="20230427 15:58:31.398" endtime="20230427 15:58:31.398">Parent suite setup failed:
+List with locator 'id=language-list' not found.</status>
+</test>
+<test id="s1-t15" name="TC_15 Verify Sites Page &amp; Add Sites window" line="444">
+<doc>Verifies translation of texts for the Sites Page &amp; Add Sites window</doc>
+<tag>TC15</tag>
+<status status="FAIL" starttime="20230427 15:58:31.398" endtime="20230427 15:58:31.398">Parent suite setup failed:
+List with locator 'id=language-list' not found.</status>
+</test>
+<test id="s1-t16" name="TC_16 Verify Environments Page &amp; Add Environments window" line="466">
+<doc>Verifies translation of texts for the Environments Page &amp; Add Environments window</doc>
+<tag>TC16</tag>
+<status status="FAIL" starttime="20230427 15:58:31.398" endtime="20230427 15:58:31.398">Parent suite setup failed:
+List with locator 'id=language-list' not found.</status>
+</test>
+<test id="s1-t17" name="TC_17 Verify Clouds Page" line="488">
+<doc>Verifies translation of texts for the Clouds Page</doc>
+<tag>TC17</tag>
+<status status="FAIL" starttime="20230427 15:58:31.398" endtime="20230427 15:58:31.398">Parent suite setup failed:
+List with locator 'id=language-list' not found.</status>
+</test>
+<test id="s1-t18" name="TC_18 Verify Site Servers Page" line="502">
+<doc>Verifies translation of texts for the Site Servers Page</doc>
+<tag>TC18</tag>
+<status status="FAIL" starttime="20230427 15:58:31.398" endtime="20230427 15:58:31.398">Parent suite setup failed:
+List with locator 'id=language-list' not found.</status>
+</test>
+<test id="s1-t19" name="TC_19 Verify Data Sources Page &amp; Add Data Sources window" line="516">
+<doc>Verifies translation of texts for the Data Sources Page &amp; Add Data Sources window</doc>
+<tag>TC19</tag>
+<status status="FAIL" starttime="20230427 15:58:31.398" endtime="20230427 15:58:31.398">Parent suite setup failed:
+List with locator 'id=language-list' not found.</status>
+</test>
+<test id="s1-t20" name="TC_20 Verify Landing Page of Operator" line="538">
+<doc>Verifies translation of texts for the landing page</doc>
+<tag>TC20</tag>
+<status status="FAIL" starttime="20230427 15:58:31.398" endtime="20230427 15:58:31.398">Parent suite setup failed:
+List with locator 'id=language-list' not found.</status>
+</test>
+<test id="s1-t21" name="TC_21 Verify Notification Rules Page" line="551">
+<doc>Verifies translation of texts for the Notification Rules page</doc>
+<tag>TC21</tag>
+<status status="FAIL" starttime="20230427 15:58:31.398" endtime="20230427 15:58:31.398">Parent suite setup failed:
+List with locator 'id=language-list' not found.</status>
+</test>
+<test id="s1-t22" name="TC_22 Verify Enterprise Notification Summary Page" line="632">
+<doc>Verifies translation of texts for the Enterprise Notification Summary page</doc>
+<tag>TC22</tag>
+<status status="FAIL" starttime="20230427 15:58:31.413" endtime="20230427 15:58:31.413">Parent suite setup failed:
+List with locator 'id=language-list' not found.</status>
+</test>
+<test id="s1-t23" name="TC_23 Verify Production Page" line="667">
+<doc>Verifies translation of texts for the Production page</doc>
+<tag>TC23</tag>
+<status status="FAIL" starttime="20230427 15:58:31.413" endtime="20230427 15:58:31.413">Parent suite setup failed:
+List with locator 'id=language-list' not found.</status>
+</test>
+<test id="s1-t24" name="TC_24 Verify My Views Page" line="710">
+<doc>Verifies translation of texts for the My Views page</doc>
+<tag>TC24</tag>
+<status status="FAIL" starttime="20230427 15:58:31.413" endtime="20230427 15:58:31.413">Parent suite setup failed:
+List with locator 'id=language-list' not found.</status>
+</test>
+<test id="s1-t25" name="TC_25 Verify Manage Scenes Page" line="762">
+<doc>Verifies translation of texts for the Manage Scenes page</doc>
+<tag>TC25</tag>
+<status status="FAIL" starttime="20230427 15:58:31.413" endtime="20230427 15:58:31.413">Parent suite setup failed:
+List with locator 'id=language-list' not found.</status>
+</test>
+<test id="s1-t26" name="TC_26 Verify Vault Page" line="779">
+<doc>Verifies translation of texts for the Manage Scenes page</doc>
+<tag>TC26</tag>
+<status status="FAIL" starttime="20230427 15:58:31.413" endtime="20230427 15:58:31.413">Parent suite setup failed:
+List with locator 'id=language-list' not found.</status>
+</test>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230427 15:58:31.413" endtime="20230427 15:58:33.655"/>
+</kw>
+<doc>Necessary Libraries and Resources file are mentioned below</doc>
+<status status="FAIL" starttime="20230427 15:58:18.904" endtime="20230427 15:58:33.655">Suite setup failed:
+List with locator 'id=language-list' not found.</status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="26" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">TC01</stat>
+<stat pass="0" fail="1" skip="0">TC02</stat>
+<stat pass="0" fail="1" skip="0">TC03</stat>
+<stat pass="0" fail="1" skip="0">TC04</stat>
+<stat pass="0" fail="1" skip="0">TC05</stat>
+<stat pass="0" fail="1" skip="0">TC06</stat>
+<stat pass="0" fail="1" skip="0">TC07</stat>
+<stat pass="0" fail="1" skip="0">TC08</stat>
+<stat pass="0" fail="1" skip="0">TC09</stat>
+<stat pass="0" fail="1" skip="0">TC10</stat>
+<stat pass="0" fail="1" skip="0">TC11</stat>
+<stat pass="0" fail="1" skip="0">TC12</stat>
+<stat pass="0" fail="1" skip="0">TC13</stat>
+<stat pass="0" fail="1" skip="0">TC14</stat>
+<stat pass="0" fail="1" skip="0">TC15</stat>
+<stat pass="0" fail="1" skip="0">TC16</stat>
+<stat pass="0" fail="1" skip="0">TC17</stat>
+<stat pass="0" fail="1" skip="0">TC18</stat>
+<stat pass="0" fail="1" skip="0">TC19</stat>
+<stat pass="0" fail="1" skip="0">TC20</stat>
+<stat pass="0" fail="1" skip="0">TC21</stat>
+<stat pass="0" fail="1" skip="0">TC22</stat>
+<stat pass="0" fail="1" skip="0">TC23</stat>
+<stat pass="0" fail="1" skip="0">TC24</stat>
+<stat pass="0" fail="1" skip="0">TC25</stat>
+<stat pass="0" fail="1" skip="0">TC26</stat>
+</tag>
+<suite>
+<stat pass="0" fail="26" skip="0" id="s1" name="Administrator">Administrator</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

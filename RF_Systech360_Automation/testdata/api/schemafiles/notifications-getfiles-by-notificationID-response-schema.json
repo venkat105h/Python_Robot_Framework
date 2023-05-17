@@ -1,0 +1,149 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "resourcePath": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "count": {
+      "type": "integer"
+    },
+    "dataValue": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "pkid": {
+              "type": "integer"
+            },
+            "uniObjectTypeId": {
+              "type": "integer"
+            },
+            "datakey": {
+              "type": "string"
+            },
+            "imageId": {
+              "type": "integer"
+            },
+            "image": {
+              "type": "object",
+              "properties": {
+                "pkid": {
+                  "type": "integer"
+                },
+                "imageURL": {
+                  "type": "null"
+                }
+              },
+              "required": [
+                "pkid",
+                "imageURL"
+              ]
+            },
+            "itemID": {
+              "type": "string"
+            },
+            "updateDate": {
+              "type": "string"
+            },
+            "objectName": {
+              "type": "string"
+            },
+            "originatorId": {
+              "type": "integer"
+            },
+            "objectVersion": {
+              "type": "integer"
+            },
+            "state": {
+              "type": "integer"
+            },
+            "parentId": {
+              "type": "integer"
+            },
+            "description": {
+              "type": "string"
+            },
+            "systech360DisplayFilename": {
+              "type": "string"
+            },
+            "uploadedFilename": {
+              "type": "string"
+            },
+            "fileManagerFullFilepath": {
+              "type": "string"
+            },
+            "lotCode": {
+              "type": "string"
+            },
+            "lotId": {
+              "type": "integer"
+            },
+            "serverId": {
+              "type": "string"
+            },
+            "startDate": {
+              "type": "string"
+            },
+            "fileType": {
+              "type": "string"
+            },
+            "fileSize": {
+              "type": "integer"
+            },
+            "createDate": {
+              "type": "string"
+            },
+            "ackNackCode": {
+              "type": "null"
+            },
+            "ackNackDescription": {
+              "type": "null"
+            },
+            "status": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "pkid",
+            "uniObjectTypeId",
+            "datakey",
+            "imageId",
+            "image",
+            "itemID",
+            "updateDate",
+            "objectName",
+            "originatorId",
+            "objectVersion",
+            "state",
+            "parentId",
+            "description",
+            "systech360DisplayFilename",
+            "uploadedFilename",
+            "fileManagerFullFilepath",
+            "lotCode",
+            "lotId",
+            "serverId",
+            "startDate",
+            "fileType",
+            "fileSize",
+            "createDate",
+            "ackNackCode",
+            "ackNackDescription",
+            "status"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "resourcePath",
+    "status",
+    "count",
+    "dataValue"
+  ]
+}
